@@ -1,0 +1,112 @@
+//colors
+:root, [data-theme='default'] {
+  --color-primary: #2a2a2a;
+  --color-secondary: #ffe400;
+  --color-success: green;
+  --color-danger: red;
+  --color-gray-dark: #444444;
+  --color-gray: #757575;
+  --color-gray-light: #e8e8e8;
+  --color-gray-lighter: #f1f1f1;
+  --shadow: 0px 10px 25px rgba(0,0,0,0.1);
+  /*contrast*/
+  --color-bg: white;
+  --color-contrast-lower: hsl(0, 0%, 95%);
+  --color-contrast-low: hsl(240, 1%, 83%);
+  --color-contrast-medium: hsl(240, 1%, 48%);
+  --color-contrast-high: hsl(240, 4%, 20%);
+  --color-contrast-higher: black;
+}
+
+[data-theme] {
+  background-color: var(--color-bg);
+  color: var(--color-contrast-high);
+}
+
+//themes
+[data-theme='dark'] {
+  --color-primary: red;
+  --color-secondary: gray;
+  /*contrast*/
+  --color-bg: black;
+  --color-contrast-lower: hsl(240, 6%, 15%);
+  --color-contrast-low: hsl(252, 4%, 25%);
+  --color-contrast-medium: hsl(240, 1%, 57%);
+  --color-contrast-high: hsl(0, 0%, 89%);
+  --color-contrast-higher: white;
+}
+
+$white: #fff;
+$black: #000;
+$primary: var(--color-primary);
+$secondary: var(--color-secondary);
+$success: var(--color-success);
+$danger: var(--color-danger);
+$gray-dark: var(--color-gray-dark);
+$gray: var(--color-gray);
+$gray-light: var(--color-gray-light);
+$gray-lighter: var(--color-gray-lighter);
+$shadow: var(--shadow);
+
+//font family
+:root {
+  --font-primary: 'Futura', sans-serif;
+  --font-secondary: 'Roboto', serif;
+  --font-accent: serif;
+}
+
+$font-primary: var(--font-primary);
+$font-secondary: var(--font-secondary);
+$font-accent: var(--font-accent);
+
+// font-size
+:root {
+  --text-xxxs: 0.8125rem; //13px
+  --text-xxs: 0.875rem; //14px
+  --text-xs: 1rem; //16px
+  --text-s: 1.125rem; //18px
+  --text-m: 1.25rem; //20px
+  --text-l: 1.5rem; //24px
+  --text-l2: 1.875rem; //30px
+  --text-xl: 2.75rem; //44px
+  --text-xxl: 3.75rem; //60px
+  --text-xxxl: 5.75rem; //92px
+}
+
+//size
+$xxxs: var(--text-xxxs);
+$xxs: var(--text-xxs);
+$xs: var(--text-xs);
+$s: var(--text-s);
+$m: var(--text-m);
+$l: var(--text-l);
+$l2: var(--text-l2);
+$xl: var(--text-xl);
+$xxl: var(--text-xxl);
+$xxxl: var(--text-xxxl);
+
+:root {
+  --space-unit:  1em;
+  --space-xxxxs: calc(0.125 * var(--space-unit)); 
+  --space-xxxs:  calc(0.25 * var(--space-unit));
+  --space-xxs:   calc(0.375 * var(--space-unit));
+  --space-xs:    calc(0.5 * var(--space-unit));
+  --space-sm:    calc(0.75 * var(--space-unit));
+  --space-md:    calc(1.25 * var(--space-unit));
+  --space-lg:    calc(2 * var(--space-unit));
+  --space-xl:    calc(3.25 * var(--space-unit));
+  --space-xxl:   calc(5.25 * var(--space-unit));
+  --space-xxxl:  calc(8.5 * var(--space-unit));
+  --space-xxxxl: calc(13.75 * var(--space-unit));
+}
+
+@supports(--css: variables) {
+  :root {
+    @include tabletL {
+      --space-unit:  1.25em;
+    }
+  }
+}
+
+//diff
+$headerHeight: 80px;

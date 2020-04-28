@@ -1,0 +1,63 @@
+.contact {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__content {
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 3;
+  }
+  &__title {
+    font-family: $font-secondary;
+    font-weight: 300;
+    color: $white;
+    font-size: $xl;
+    margin-bottom: .5em;
+    @include laptop {
+      font-size: $l2;
+    }
+  }
+  &__link {
+    display: block;
+    color: $white;
+    font-size: $xxl;
+    margin-bottom: 14px;
+    letter-spacing: .1em;
+    @include laptop {
+      font-size: $l2;
+    }
+    @include tabletM {
+      font-size: $l;
+    }
+    @include mobileL {
+      font-size: $s;
+    }
+  }
+  &__icons {
+
+  }
+  &__icon-link {
+    color: $white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2em;
+    &:last-child {
+      margin-right: 0;
+    }
+    & svg {
+      width: 50px;
+      height: 50px;
+      fill: $white;
+      @include tabletL {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+// Fonts here
+// see more: https://github.com/vedees/webpack-template/blob/master/README.md#import-js-files
+@font-face {
+  font-family: "Futura";
+  src: url('/assets/fonts/Futura-Bold.woff')  format('woff'),
+       url('/assets/fonts/Futura-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url('/assets/fonts/Roboto.woff')  format('woff'),
+       url('/assets/fonts/Roboto.woff2') format('woff2');
+}

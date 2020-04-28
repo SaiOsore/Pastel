@@ -1,0 +1,13 @@
+.FlyingImagesContainer {
+  cursor: grab;
+  cursor: -webkit-grab;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.FlyingImagesContainer:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}

@@ -1,0 +1,30 @@
+.body-fixed {
+  overflow: hidden;
+  position: fixed;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.active-block {
+  display: block;
+}
+
+.active-flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  visibility: hidden;
+  opacity: 0;
+}

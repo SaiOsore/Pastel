@@ -1,0 +1,44 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Home Page"
+  - const description = "Home Page"
+
+block content
+  include ../blocks/header/header
+  div(class="home")
+    main(class="home-main")
+      div(class="home-main__wrapper")
+        div(class="home-main__nav-wrapper")
+          nav(class="home-main-nav")
+            ul(class="home-main-nav__list")
+              li(class="home-main-nav__item" data-index="1")
+                h2(class="home-main-nav__title") Услуги
+                  a(class="home-main-nav__link" href="#")
+              li(class="home-main-nav__item" data-index="1")
+                h2(class="home-main-nav__title") Стили
+                  a(class="home-main-nav__link" href="#")
+              li(class="home-main-nav__item" data-index="1")
+                h2(class="home-main-nav__title") Заказать
+                  a(class="home-main-nav__link" href="#")
+              li(class="home-main-nav__item" data-index="1")
+                h2(class="home-main-nav__title") Свидания
+                  a(class="home-main-nav__link" href="#")
+              li(class="home-main-nav__item" data-index="1")
+                h2(class="home-main-nav__title") Девичник
+                  a(class="home-main-nav__link" href="#")
+              li(class="home-main-nav__item" data-index="1")
+                h2(class="home-main-nav__title") Релакс
+                  a(class="home-main-nav__link" href="#")
+              li(class="home-main-nav__item" data-index="1")
+                h2(class="home-main-nav__title") 1-Завтрак
+                  a(class="home-main-nav__link" href="#")
+              li(class="home-main-nav__item" data-index="1")
+                h2(class="home-main-nav__title") Контакты
+                  a(class="home-main-nav__link" href="./contact.html")
+              li(class="home-main-nav__item" data-index="1")
+                h2(class="home-main-nav__title") О Нас
+                  a(class="home-main-nav__link" href="./about.html")
+      div(class="home-main-preview")
+        div(class="home-main-preview__item home-main-preview__item--date" data-index="1")
+          img(class="home-main-preview__img" src="../assets/img/home/services.jpg" alt="services cactus img")

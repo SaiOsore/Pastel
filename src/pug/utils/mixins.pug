@@ -1,0 +1,19 @@
+mixin buttons-container(btn1, btn2, className)
+  div(class='buttons-container')
+    button(class=['btn-l'] class='btn--'+className) #{btn1}
+    button(class=['btn-l'] class='btn--'+className) #{btn2}
+
+mixin link-container(link1, src1, link2, src2, className)
+  div(class='buttons-container')
+    a(class=['btn-l'] href=src1 class='btn--'+className) #{link1}
+    a(class=['btn-l'] href=src2 class='btn--'+className) #{link2}
+
+mixin titles(title1, title2, descr)
+  div(class='titles')
+    div(class='titles__container')
+      if(title1)
+        h2(class='titles__first') #{title1}
+      if(title2)
+        h3(class='titles__second') #{title2}
+    if(descr)
+      p(class='titles__sub-title sub-title') #{descr}

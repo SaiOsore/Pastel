@@ -1,0 +1,97 @@
+//media-queries
+
+//max-width
+
+@mixin mobileS {
+  @media (max-width: 320px) { @content; }
+}
+
+@mixin mobileM {
+  @media (max-width: 375px) { @content; }
+}
+
+@mixin mobileL {
+  @media (max-width: 425px) { @content; }
+}
+
+@mixin tabletS {
+  @media (max-width: 540px) { @content; }
+}
+
+@mixin tabletM {
+  @media (max-width: 600px) { @content; }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) { @content; }
+}
+
+@mixin tabletL {
+  @media (max-width: 992px) { @content; }
+}
+
+@mixin laptop {
+  @media (max-width: 1024px) { @content; }
+}
+
+@mixin laptopM {
+  @media (max-width: 1200px) { @content; }
+}
+
+@mixin laptopL {
+  @media (max-width: 1440px) { @content; }
+}
+
+@mixin desktop {
+  @media (max-width: 1920px) { @content; }
+}
+
+@mixin desktopL {
+  @media (max-width: 2560px) { @content; }
+}
+
+//max-height 
+
+@mixin MHmobileL {
+  @media (max-height: 425px) { @content; }
+}
+
+@mixin MHtabletM {
+  @media (max-height: 600px) { @content; }
+}
+
+//landscape-portrait
+@mixin portrait {
+  @media screen and (orientation:portrait) { @content; }
+}
+
+@mixin landscape {
+  @media screen and (orientation:landscape) { @content; }
+}
+
+
+// width
+@mixin r($width) {
+  @media only screen and (max-width: $width+ "px"){
+    @content;
+  }
+}
+
+@mixin rmin($width) {
+  @media only screen and (min-width: $width+ "px"){
+    @content;
+  }
+}
+
+// height
+@mixin rh($height) {
+  @media only screen and (max-height: $height + "px"){
+    @content;
+  }
+}
+
+@mixin rhmin($height) {
+  @media only screen and (min-height: $height + "px"){
+    @content;
+  }
+}
