@@ -30,10 +30,12 @@
     justify-content: center;
     //height: 100vw;
     padding-left: 1.5rem;
+    text-transform: uppercase;
   }
   &__item {
     position: relative;
     display: inline-block;
+    margin-bottom: 2rem;
   }
   &__link {
     position: absolute;
@@ -48,7 +50,8 @@
     position: relative;
     display: inline-block;
     margin-right: 1vw;
-    font-size: 5.8vmax;
+    font-size: 3.8vmax;
+    font-weight: 400;
     font-weight: 700;
     line-height: 1.19;
     color: $black;
@@ -62,14 +65,55 @@
   height: 100%;
   width: 100%;
   pointer-events: none;
+  overflow: hidden;
   &__item {
-    //visibility: hidden;
+    visibility: hidden;
     position: absolute;
-    &--date {
+    &--services {
       top: 0;
+      right: calc(50% - 45vh);
+      width: 81.5vh;
+    }
+    &--styles {
+      top: calc(50% - 33vh);
+      right: calc(50% - 18vh);
+      width: 25vh;
+    }
+    &--order {
+      top: calc(50% - 44vh);
+      right: calc(50% - 82vh);
+      width: 95vh;
+    }
+    &--date {
+      top: calc(50% - 44vh);
+      right: calc(50% - 7vh);
+      width: 45vh;
+    }
+    &--virgin {
+      top: calc(50% - 50vh);
+      right: calc(50% - 71vh);
+      width: 100vh;
+      opacity: .8;
+    }
+    &--relax {
+      top: calc(50% - 44vh);
+      right: calc(50% - 31vh);
+      width: 57vh;
+    }
+    &--breakfast {
+      top: calc(50% - 46vh);
+      right: calc(50% - -8vh);
+      width: 61vh;
+    }
+    &--contact {
+      top: calc(50% - 30vh);
+      right: calc(50% - 63vh);
+      width: 121vh;
+    }
+    &--about {
+      top: calc(50% - 52vh);
       right: calc(50% - 38vh);
-      width: 61.5vh;
-      max-width: 665px;
+      width: 90vh;
     }
   }
   &__img {
