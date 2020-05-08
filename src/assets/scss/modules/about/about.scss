@@ -1,7 +1,8 @@
 .about {
-  padding: 40px;
+  padding-top: 85px;
+  padding-bottom: 85px;
   @include tabletL {
-    padding: 20px;
+    padding: 60px 1rem;
   }
   &__title {
     font-size: 7vw;

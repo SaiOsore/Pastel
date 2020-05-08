@@ -1,38 +1,7 @@
-const tabNav = document.querySelectorAll('.menu-nav__item'),
-      tabContent = document.querySelectorAll('.menu-nav-preview__item');
+import { selectTabNav, deselectTabContent } from '../utils/tabs'
+import { toggleActive } from '../utils/helpers'
 
-function selectTabNav() {
-  const tabName = this.getAttribute('data-tab');
-  selectTabContent(tabName);
-}
-
-function selectTabContent(tab) {
-  tabContent.forEach((item) => {
-    if(item.dataset.tab === tab) {
-      item.style.visibility = 'visible';
-    } else {
-      item.style.visibility = 'hidden';
-    }
-  });
-}
-
-function deselectTabContent() {
-  tabContent.forEach((item) => {
-    item.style.visibility = 'hidden';
-  });
-}
-
-tabNav.forEach((item) => {
-  item.addEventListener('mouseover', selectTabNav);
-  item.addEventListener('click', selectTabNav);
-  //item.addEventListener('mouseout', deselectTabContent);
-});
-
-
-const toggleActive = (element, className) => {
-  element.classList.toggle(className);
-}
-
+/*MENU BUTTON EVENTS*/
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu');
 const body = document.body;
@@ -43,9 +12,25 @@ menuBtn.addEventListener('click', function() {
   toggleActive(document.body, 'body-fixed');
   if(this.classList.contains('active')) {
     this.innerText = 'ЗАКРЫТЬ';
-    body.dataset.theme = 'all-white';
+    body.dataset.theme = 'bw';
   } else {
     this.innerText = 'МЕНЮ';
     body.dataset.theme = '';
   }
+});
+
+/*MENU IMAGES TABS*/
+const tabNav = document.querySelectorAll('.menu-nav__item'),
+      tabContent = document.querySelectorAll('.menu-nav-preview__item');
+
+tabNav.forEach((item) => {
+  item.addEventListener('mouseover', () => {
+    selectTabNav(item, tabContent);
+  });
+  item.addEventListener('click', () => {
+    selectTabNav(item, tabContent)
+  });
+  // item.addEventListener('mouseout', () => {
+  //   deselectTabContent(tabContent);
+  // });
 });

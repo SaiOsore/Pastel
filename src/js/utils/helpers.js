@@ -5,3 +5,7 @@ export default function shuffle(a) {
   }
   return a
 }
+
+export const toggleActive = (element, className) => {
+  element.classList.toggle(className);
+}

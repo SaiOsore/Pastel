@@ -1,6 +1,6 @@
 import Matter from './Matter'
 import preload from '../utils/preload'
-import shuffle from '../utils/shuffle'
+import shuffle from '../utils/helpers'
 import images from '../utils/images'
 
 const MAX_IMAGES = 8

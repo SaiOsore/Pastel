@@ -21,8 +21,9 @@
   color: var(--color-contrast-high);
 }
 
-[data-theme='all-white'] {
+[data-theme='bw'] {
   --color-primary: #fff;
+  --color-secondary: #000;
 }
 
 //themes
