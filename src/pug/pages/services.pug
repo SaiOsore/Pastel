@@ -3,6 +3,37 @@ extends ../layouts/default
 block variables
   - const title = "Services Page"
   - const description = "Services Page"
+  - 
+    services = [
+      { type: '1',
+        link: '#',
+        descr: 'Повседневная практика показывает, что сложившаяся структура организации представляет собой.',
+        src: '../assets/img/services/1.jpg',
+        alt: 'services',
+      },
+      { type: '2',
+        link: '#',
+        descr: 'Повседневная практика показывает, что сложившаяся структура организации представляет собой.',
+        src: '../assets/img/services/2.jpg',
+        alt: 'services',
+      },
+      { type: '1',
+        link: '#',
+        descr: 'Повседневная практика показывает, что сложившаяся структура организации представляет собой.',
+        src: '../assets/img/services/3.jpg',
+        alt: 'services',
+      },
+      { type: '2',
+        link: '#',
+        descr: 'Повседневная практика показывает, что сложившаяся структура организации представляет собой.',
+        src: '../assets/img/services/4.jpg',
+        alt: 'services',
+      },
+    ]
 
 block content
-  div(class="services")
+  main(class="services container")
+    section(class="section services__main-section")
+      h1(class="title title--main") Услуги
+    +servicesSection(services)
+    include ../blocks/packages/packages

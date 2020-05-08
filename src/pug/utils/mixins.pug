@@ -1,0 +1,28 @@
+mixin servicesSection(services)
+  for service in services
+    if(service.type === '1')
+      section(class="section services__section")
+          div(class="services__content-img")
+            div(class="services__img-container")
+              img(class="services__img" src=service.src alt=service.alt)
+          div(class="services__content-text")
+            div(class="services__descr")
+              p(class="text") #{service.descr}
+            div(class="services__btns-container")
+              a(class="btn services__btn" href="./order.html")
+                span() заказать
+              a(class="btn services__btn" href=service.link)
+                span() дополнительно
+    if(service.type === '2')
+      section(class="section services__section")
+        div(class="services__content-text")
+          div(class="services__descr")
+            p(class="text") #{service.descr}
+          div(class="services__btns-container")
+            a(class="btn services__btn" href="./order.html")
+              span() заказать
+            a(class="btn services__btn" href=service.link)
+              span() дополнительно
+        div(class="services__content-img")
+          div(class="services__img-container")
+            img(class="services__img" src=service.src alt=service.alt)

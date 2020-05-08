@@ -16,10 +16,10 @@
   --color-contrast-higher: black;
 }
 
-[data-theme] {
-  background-color: var(--color-bg);
-  color: var(--color-contrast-high);
-}
+// [data-theme] {
+//   background-color: var(--color-bg);
+//   color: var(--color-contrast-high);
+// }
 
 [data-theme='bw'] {
   --color-primary: #fff;
