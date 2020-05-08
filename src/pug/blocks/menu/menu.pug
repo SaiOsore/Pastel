@@ -1,0 +1,34 @@
+div(class="menu container")
+  div(class="menu__wrapper")
+  div(class="menu__container")
+    div(class="menu__socials")
+      include ../../socials/socials
+    div(class="menu-nav__wrapper")
+      nav(class="menu-nav")
+        ul(class="menu-nav__list")
+          li(class="menu-nav__item" data-tab="1")
+            h2(class="menu-nav__title") Услуги
+              a(class="menu-nav__link" href="./services.html")
+          li(class="menu-nav__item" data-tab="2")
+            h2(class="menu-nav__title") Стили
+              a(class="menu-nav__link" href="./styles.html")
+          li(class="menu-nav__item" data-tab="3")
+            h2(class="menu-nav__title") Заказать
+              a(class="menu-nav__link" href="./order.html")
+          li(class="menu-nav__item" data-tab="4")
+            h2(class="menu-nav__title") Контакты
+              a(class="menu-nav__link" href="./contact.html")
+          li(class="menu-nav__item" data-tab="5")
+            h2(class="menu-nav__title") О Нас
+              a(class="menu-nav__link" href="./about.html")
+    div(class="menu-nav-preview")
+      div(class="menu-nav-preview__item menu-nav-preview__item--services" data-tab="1")
+        img(class="menu-nav-preview__img" src="../assets/img/menu/services.jpg" alt="services")
+      div(class="menu-nav-preview__item menu-nav-preview__item--styles" data-tab="2")
+        img(class="menu-nav-preview__img" src="../assets/img/menu/styles.jpg" alt="styles")
+      div(class="menu-nav-preview__item menu-nav-preview__item--order" data-tab="3")
+        img(class="menu-nav-preview__img" src="../assets/img/menu/order.png" alt="order")
+      div(class="menu-nav-preview__item menu-nav-preview__item--contact" data-tab="4")
+        img(class="menu-nav-preview__img" src="../assets/img/menu/contact.jpg" alt="contact")
+      div(class="menu-nav-preview__item menu-nav-preview__item--about" data-tab="5")
+        img(class="menu-nav-preview__img" src="../assets/img/menu/about.jpg" alt="about")

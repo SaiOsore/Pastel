@@ -1,0 +1,31 @@
+.socials {
+  display: flex;
+  justify-content: center;
+  &__link {
+    color: $white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2em;
+    border: 1px solid $white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include tabletL {
+      width: 40px;
+      height: 40px;
+    }
+    & svg {
+      width: 25px;
+      height: 25px;
+      fill: $white;
+      @include tabletL {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}

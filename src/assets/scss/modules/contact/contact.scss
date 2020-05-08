@@ -7,57 +7,59 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &__content {
-    text-transform: uppercase;
-    text-align: center;
+  &__main {
+    text-align: left;
     z-index: 3;
+    display: flex;
+    @include tabletM {
+      flex-direction: column;
+    }
+  }
+  &__content {
+
+  }
+  &__descr {
+    color: $gray;
+    margin-right: 70px;
+    font-size: 18px;
+    @include tabletL {
+      margin-right: 35px;
+      font-size: 16px;
+    }
+    @include tabletM {
+      margin-bottom: 20px;
+    }
   }
   &__title {
-    font-family: $font-secondary;
-    font-weight: 300;
     color: $white;
-    font-size: $xl;
-    margin-bottom: .5em;
-    @include laptop {
-      font-size: $l2;
+    font-size: 109px;
+    margin-bottom: .1em;
+    @include tabletL {
+      font-size: 55px;
+      margin-bottom: .3em;
+    }
+    @include mobileL {
+      font-size: 42px;
     }
   }
   &__link {
+    font-family: $font-primary;
+    text-transform: uppercase;
     display: block;
     color: $white;
-    font-size: $xxl;
+    font-size: $l;
     margin-bottom: 14px;
     letter-spacing: .1em;
-    @include laptop {
-      font-size: $l2;
-    }
-    @include tabletM {
-      font-size: $l;
-    }
-    @include mobileL {
+    transform: scaleY(1.6);
+    @include tabletL {
       font-size: $s;
     }
-  }
-  &__icons {
-
-  }
-  &__icon-link {
-    color: $white;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 2em;
-    &:last-child {
-      margin-right: 0;
+    @include mobileL {
+      font-size: $xs;
     }
-    & svg {
-      width: 50px;
-      height: 50px;
-      fill: $white;
-      @include tabletL {
-        width: 24px;
-        height: 24px;
-      }
-    }
+  }
+  & .socials {
+    margin-top: 30px;
+    justify-content: flex-start;
   }
 }

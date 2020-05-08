@@ -1,13 +1,11 @@
 //colors
 :root, [data-theme='default'] {
-  --color-primary: #2a2a2a;
-  --color-secondary: #ffe400;
-  --color-success: green;
-  --color-danger: red;
-  --color-gray-dark: #444444;
-  --color-gray: #757575;
-  --color-gray-light: #e8e8e8;
-  --color-gray-lighter: #f1f1f1;
+  --color-light: #fff;
+  --color-dark: #000;
+  --color-primary: #b22b38;
+  --color-primary-light: #d0a6ae;
+  --color-secondary: #cbdde6;
+  --color-gray: #5a5a5a;
   --shadow: 0px 10px 25px rgba(0,0,0,0.1);
   /*contrast*/
   --color-bg: white;
@@ -23,6 +21,10 @@
   color: var(--color-contrast-high);
 }
 
+[data-theme='all-white'] {
+  --color-primary: #fff;
+}
+
 //themes
 [data-theme='dark'] {
   --color-primary: red;
@@ -36,22 +38,19 @@
   --color-contrast-higher: white;
 }
 
-$white: #fff;
-$black: #000;
+$white: var(--color-light);
+$black: var(--color-dark);
 $primary: var(--color-primary);
+$primary-light: var(--color-primary-light);
 $secondary: var(--color-secondary);
-$success: var(--color-success);
-$danger: var(--color-danger);
-$gray-dark: var(--color-gray-dark);
 $gray: var(--color-gray);
-$gray-light: var(--color-gray-light);
-$gray-lighter: var(--color-gray-lighter);
 $shadow: var(--shadow);
 
 //font family
 :root {
-  --font-primary: 'Futura', sans-serif;
-  --font-secondary: 'Roboto', serif;
+  --font-primary: "Forum", sans-serif;
+  --font-secondary: "Futura", serif;
+  --font-text: "Roboto", sans-serif;
   --font-accent: serif;
 }
 
@@ -107,6 +106,4 @@ $xxxl: var(--text-xxxl);
     }
   }
 }
-
-//diff
-$headerHeight: 80px;
+//different variables

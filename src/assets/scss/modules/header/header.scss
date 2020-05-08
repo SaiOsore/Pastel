@@ -2,14 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 6.3rem;
-  background-color: $white;
-  border-right: 1px solid $black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  will-change: width;
-  // visibility: hidden;
+  width: 100%;
+  z-index: 10;
+  &__nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

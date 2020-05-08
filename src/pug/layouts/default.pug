@@ -3,7 +3,7 @@ include ../utils/mixins
 block variables
 
 doctype html
-html(lang="en")
+html(lang="ru")
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
@@ -11,7 +11,7 @@ html(lang="en")
     meta(name='description' content=description)
     meta(name='viewport' content='width=device-width, initial-scale=1')
   body
-    //- include ../blocks/header/header
+    include ../blocks/header/header
     .content
       block content
-    //- include ../blocks/footer/footer
+    include ../blocks/footer/footer

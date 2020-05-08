@@ -1,0 +1,18 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Hen-Party Page"
+  - const description = "Hen-Party Page"
+
+block content
+  div(class="hen-party")
+      h1(class="title home__title")
+        a(class="home__link" href="/") Пастель.
+      div(class="home__imgs")
+        div(class="home__imgs-container")
+          div(class="home__img-container home__img-container--first")
+            img(class="home__img home__img--first" src="../assets/img/home/test.jpg" alt="flowers")
+          div(class="home__img-container home__img-container--second")
+            img(class="home__img home__img--second" src="../assets/img/home/test.jpg" alt="flowers")
+          div(class="home__img-container home__img-container--third")
+            img(class="home__img home__img--third" src="../assets/img/home/test2.jpg" alt="flowers")

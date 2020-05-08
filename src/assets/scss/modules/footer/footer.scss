@@ -1,1 +1,28 @@
-// footer style
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  color: $primary;
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__nav {
+  
+  }
+  &__link {
+    display: inline-block;
+    margin-right: 14px;
+    color: $primary;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__copyright {
+
+  }
+}

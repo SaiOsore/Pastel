@@ -1,13 +1,23 @@
-// Fonts here
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#import-js-files
+@font-face {
+  font-family: "Forum";
+  src: url("/assets/fonts/Forum.eot");
+  src: local("Forum"),
+    url("/assets/fonts/Forum.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/Forum.woff") format("woff"),
+    url("/assets/fonts/Forum.woff2") format("woff2"),
+    url("/assets/fonts/Forum.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face {
   font-family: "Futura";
-  src: url('/assets/fonts/Futura-Bold.woff')  format('woff'),
-       url('/assets/fonts/Futura-Bold.woff2') format('woff2');
+  src: url("/assets/fonts/Futura-Bold.woff")  format("woff"),
+       url("/assets/fonts/Futura-Bold.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url('/assets/fonts/Roboto.woff')  format('woff'),
-       url('/assets/fonts/Roboto.woff2') format('woff2');
+  src: url("/assets/fonts/Roboto.woff")  format("woff"),
+       url("/assets/fonts/Roboto.woff2") format("woff2");
 }

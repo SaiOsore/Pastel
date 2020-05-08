@@ -1,4 +1,4 @@
-import Matter from './matter'
+import Matter from './Matter'
 import preload from '../utils/preload'
 import shuffle from '../utils/shuffle'
 import images from '../utils/images'
