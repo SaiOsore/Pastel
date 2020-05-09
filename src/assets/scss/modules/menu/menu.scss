@@ -9,7 +9,7 @@
   visibility: hidden;
   opacity: 0;
   overflow: hidden;
-  @include tabletL {
+  @include tabletl {
     padding: 1rem;
   }
   &.active {
@@ -54,12 +54,12 @@
   color: $primary;
   font-family: $font-primary;
   letter-spacing: 1px;
-  font-size: 22px;
+  font-size: 3vh;
   outline: none;
-  @inclulde tabletL {
+  @inclulde tabletl {
     font-size: 18px;
   }
-  @include mobileL {
+  @include mobilel {
     font-size: 16px;
   }
 }
@@ -85,7 +85,7 @@
     padding-right: 13vw;
     text-transform: uppercase;
     z-index: 100;
-    @include tabletL {
+    @include tabletl {
       padding-right: 0;
       text-align: right;
     }
@@ -97,7 +97,7 @@
     &:last-child {
       margin-bottom: 0;
     }
-    @include laptopL {
+    @include laptopl {
       margin-bottom: .5rem;
     }
   }
@@ -118,7 +118,7 @@
     line-height: 1.19;
     letter-spacing: 1vmax;
     color: $white;
-    @include tabletL {
+    @include tabletl {
       font-size: 5vmax;
     }
   }
@@ -132,7 +132,7 @@
   width: 100%;
   pointer-events: none;
   overflow: hidden;
-  @include mobileL {
+  @include mobilel {
     display: none;
   }
   &__item {

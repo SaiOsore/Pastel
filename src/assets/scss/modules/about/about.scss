@@ -1,7 +1,7 @@
 .about {
   padding-top: 85px;
   padding-bottom: 85px;
-  @include tabletL {
+  @include tabletl {
     padding: 60px 1rem;
   }
   &__title {
@@ -14,7 +14,7 @@
     text-transform: uppercase;
     margin-bottom: 30px;
     color: $black;
-    @include tabletL {
+    @include tabletl {
       font-size: 5vw;
     }
   }

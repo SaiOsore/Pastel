@@ -11,7 +11,7 @@
     @include laptop {
       font-size: 12vh;
     }
-    @include tabletM {
+    @include tablet {
       font-size: 8vh;
     }
   }
@@ -40,7 +40,7 @@
     margin: 0 auto;
     top: 50%;
     transform: translateY(-50%);
-    @include tabletL {
+    @include tabletl {
       width: 30vh;
     }
   }
@@ -54,7 +54,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      @include tabletL {
+      @include tabletl {
         width: 30vh;
       }
     }
@@ -65,7 +65,7 @@
       width: 30vh;
       transform: rotate(-25deg);
       z-index: -1;
-      @include tabletL {
+      @include tabletl {
         top: 32%;
         width: 10vh;
       }
@@ -77,7 +77,7 @@
       width: 36vh;
       transform: rotate(45deg);
       z-index: -1;
-      @include tabletL {
+      @include tabletl {
         top: 47%;
         width: 16vh;
         transform: rotate(52deg);

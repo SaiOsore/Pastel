@@ -14,7 +14,7 @@
     &:last-child {
       margin-right: 0;
     }
-    @include tabletL {
+    @include tabletl {
       width: 40px;
       height: 40px;
     }
@@ -22,7 +22,7 @@
       width: 25px;
       height: 25px;
       fill: $white;
-      @include tabletL {
+      @include tabletl {
         width: 15px;
         height: 15px;
       }

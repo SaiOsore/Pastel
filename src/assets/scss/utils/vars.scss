@@ -102,7 +102,7 @@ $xxxl: var(--text-xxxl);
 
 @supports(--css: variables) {
   :root {
-    @include tabletL {
+    @include tabletl {
       --space-unit:  1.25em;
     }
   }

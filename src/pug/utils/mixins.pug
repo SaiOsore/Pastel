@@ -1,3 +1,4 @@
+//- SERVICES PAGE
 mixin servicesSection(services)
   for service in services
     if(service.type === '1')
@@ -7,7 +8,7 @@ mixin servicesSection(services)
               img(class="services__img" src=service.src alt=service.alt)
           div(class="services__content-text")
             div(class="services__descr")
-              p(class="text") #{service.descr}
+              p(class="services__text") #{service.descr}
             div(class="services__btns-container")
               a(class="btn services__btn" href="./order.html")
                 span() заказать
@@ -17,7 +18,7 @@ mixin servicesSection(services)
       section(class="section services__section")
         div(class="services__content-text")
           div(class="services__descr")
-            p(class="text") #{service.descr}
+            p(class="services__text") #{service.descr}
           div(class="services__btns-container")
             a(class="btn services__btn" href="./order.html")
               span() заказать
@@ -26,3 +27,31 @@ mixin servicesSection(services)
         div(class="services__content-img")
           div(class="services__img-container")
             img(class="services__img" src=service.src alt=service.alt)
+
+//- STYLES PAGE
+mixin stylesSection(styles)
+  for style in styles
+    if(style.type === '1')
+      section(class="section styles__section styles__section--end")
+        div(class="styles__content-text")
+          h2(class="text styles__title") #{style.title}
+          div(class="styles__descr")
+            p(class="text styles__text") #{style.descr}
+            if(style.srcSpecial)
+              div(class=`styles__special-img-container styles__special-img-container--${style.classSpecial}`)
+                img(class="styles__special-img" src=style.srcSpecial alt=style.altSpecial)
+        div(class="styles__content-img")
+          div(class="styles__img-container")
+            img(class="styles__img" src=style.src alt=style.alt)
+    if(style.type === '2')
+      section(class="section styles__section")
+        div(class="styles__content-img")
+          div(class="styles__img-container")
+            img(class="styles__img" src=style.src alt=style.alt)
+        div(class="styles__content-text")
+          h2(class="text styles__title") #{style.title}
+          div(class="styles__descr")
+            p(class="text styles__text") #{style.descr}
+            if(style.srcSpecial)
+              div(class=`styles__special-img-container styles__special-img-container--${style.classSpecial}`)
+                img(class="styles__special-img" src=style.srcSpecial alt=style.altSpecial)

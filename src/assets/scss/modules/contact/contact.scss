@@ -7,14 +7,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include mobileS {
+  @include mobiles {
     justify-content: flex-start;
   }
   &__main {
     text-align: left;
     z-index: 3;
     display: flex;
-    @include tabletM {
+    @include tabletm {
       flex-direction: column;
     }
   }
@@ -25,11 +25,11 @@
     color: $gray;
     margin-right: 70px;
     font-size: 18px;
-    @include tabletL {
+    @include tabletl {
       margin-right: 35px;
       font-size: 16px;
     }
-    @include tabletM {
+    @include tabletm {
       margin-bottom: 20px;
     }
   }
@@ -37,11 +37,11 @@
     color: $white;
     font-size: 109px;
     margin-bottom: .1em;
-    @include tabletL {
+    @include tabletl {
       font-size: 55px;
       margin-bottom: .3em;
     }
-    @include mobileL {
+    @include mobilel {
       font-size: 42px;
     }
   }
@@ -54,10 +54,10 @@
     margin-bottom: 14px;
     letter-spacing: .1em;
     transform: scaleY(1.6);
-    @include tabletL {
+    @include tabletl {
       font-size: $s;
     }
-    @include mobileL {
+    @include mobilel {
       font-size: $xs;
     }
   }
