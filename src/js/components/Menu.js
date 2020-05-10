@@ -6,6 +6,7 @@ const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu');
 const header = document.querySelector('.header');
 const footer = document.querySelector('.footer');
+const headerColor = header.getAttribute('data-theme');
 
 menuBtn.addEventListener('click', function() {
   toggleActive(menu, 'active');
@@ -14,12 +15,17 @@ menuBtn.addEventListener('click', function() {
   if(document.body.getAttribute('data-theme') !== 'bw') {
     if(this.classList.contains('active')) {
       this.innerText = 'ЗАКРЫТЬ';
-      header.dataset.theme = 'bw';
-      footer.dataset.theme = 'bw';
+      header.dataset.theme = 'menu-white';
+      footer.dataset.theme = 'menu-white';
     } else {
       this.innerText = 'МЕНЮ';
-      header.removeAttribute('data-theme');
-      footer.removeAttribute('data-theme');
+      if(headerColor) {
+        header.dataset.theme = headerColor;
+        footer.dataset.theme = headerColor;
+      } else {
+        header.removeAttribute('data-theme');
+        footer.removeAttribute('data-theme');
+      }
     }
   }
 });

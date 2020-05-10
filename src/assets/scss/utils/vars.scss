@@ -26,6 +26,14 @@
   --color-secondary: #000;
 }
 
+[data-theme='menu-black'] {
+  --color-primary: #000;
+}
+
+[data-theme='menu-white'] {
+  --color-primary: #fff;
+}
+
 //themes
 [data-theme='dark'] {
   --color-primary: red;
@@ -107,4 +115,3 @@ $xxxl: var(--text-xxxl);
     }
   }
 }
-//different variables

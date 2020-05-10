@@ -3,6 +3,116 @@ extends ../layouts/default
 block variables
   - const title = "Breakfast Page"
   - const description = "Breakfast Page"
+  - const navColor = "menu-black"
+  - const num = "003"
+  - 
+    serviceMain = { pageTitle: "I-Завтрак",
+        title: "Предложение",
+        descr: "Повседневная практика показывает, что сложившаяся структура организации представляет собой интересный эксперимент проверки.",
+        src: "../assets/img/date/date.jpg",
+        alt: "date",
+      }
+  - 
+    serviceInfo = { title: "Повседневная",
+        descr: "Повседневная практика показывает, что сложившаяся структура организации представляет собой интересный эксперимент проверки соответствующий условий активизации. Равным образом сложившаяся структура организации позволяет выполнять важные задания по разработке систем массового участия. Таким образом реализация намеченных плановых заданий позволяет оценить значение новых предложений.",
+      }
+  - 
+    categories = [
+      { 
+        price: '600',
+        descr: 'Равным образом сложившаяся структура организации позволяет выполнять важные задания по разработке систем массового участия. Таким образом реализация намеченных плановых заданий позволяет оценить.',
+      },
+      { 
+        price: '1000',
+        descr: 'Равным образом сложившаяся структура организации позволяет выполнять важные задания по разработке систем массового участия. Таким образом реализация намеченных плановых заданий позволяет оценить.',
+      },
+      { 
+        price: '1500',
+        descr: 'Равным образом сложившаяся структура организации позволяет выполнять важные задания по разработке систем массового участия. Таким образом реализация намеченных плановых заданий позволяет оценить.',
+      },
+    ]
+  - 
+    serviceNext = { title: "Девичник",
+        link: "./hen-party.html",
+        src: "../assets/img/date/date.jpg",
+        num: "004",
+      }
 
 block content
-  div(class="breakfast")
+  div(class="breakfast service")
+    +service-main(serviceMain)
+    +service-number(num)
+    +service-info(serviceInfo.title, serviceInfo.descr)
+    div(class="ticker")
+      div(class="ticker__container")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+      div(class="ticker__container")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+        div(class="ticker__img-container")
+          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+    +categories(categories)
+    +service-next(serviceNext)

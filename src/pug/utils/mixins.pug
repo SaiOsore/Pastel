@@ -8,6 +8,7 @@ mixin servicesSection(services)
               img(class="services__img" src=service.src alt=service.alt)
           div(class="services__content-text")
             div(class="services__descr")
+              h2(class="text services__title") #{service.title}
               p(class="services__text") #{service.descr}
             div(class="services__btns-container")
               a(class="btn services__btn" href="./order.html")
@@ -18,6 +19,7 @@ mixin servicesSection(services)
       section(class="section services__section")
         div(class="services__content-text")
           div(class="services__descr")
+            h2(class="text services__title") #{service.title}
             p(class="services__text") #{service.descr}
           div(class="services__btns-container")
             a(class="btn services__btn" href="./order.html")
@@ -55,3 +57,76 @@ mixin stylesSection(styles)
             if(style.srcSpecial)
               div(class=`styles__special-img-container styles__special-img-container--${style.classSpecial}`)
                 img(class="styles__special-img" src=style.srcSpecial alt=style.altSpecial)
+
+//- HEADER
+mixin header(color)
+  header(class="header" data-theme=color)
+    nav(class="header__nav container")
+      a(class="logo" href="/")
+        | Пастель
+      button(class="menu-btn")
+        | Меню
+  include ../blocks/menu/menu
+
+//- FOOTER
+mixin footer(color)
+  footer(class="footer" data-theme=color)
+    div(class="footer__content container")
+      nav(class="footer__nav")
+        a(class="footer__link") Услуги
+        a(class="footer__link") Галерея
+      div(class="footer__copyright")
+        span() &copy; 2020
+
+//- CATEGORIES
+mixin categories(arr)
+  div(class="categories")
+    div(class="container")
+      div(class="content-container")
+        h2(class="title title--main categories__title") Категории
+        div(class="categories__content")
+          for categorie in arr
+            div(class="text categories__block")
+              p(class="categories__descr") #{categorie.descr}
+              p(class="categories__price") UAH #{categorie.price}
+
+//- SERVICE PAGES
+mixin service-main(arr)
+  main(class="service-main")
+    div(class="container")
+      div(class="content-container")
+        section(class="section service-main__section")
+          h1(class="title title--main service-main__title") #{arr.pageTitle}
+        section(class="service-main__content")
+          div(class="service-main__img-container")
+            img(class="service-main__img" src=arr.src alt=arr.alt)
+          div(class="service-main__text")
+            h2(class="text service-main__content-title") #{arr.title}
+            p(class="text service-main__descr") #{arr.descr}
+
+mixin service-number(num)
+  div(class="container")
+    div(class="content-container")
+      div(class="service-numbers")
+        p(class="service-numbers__container") #{num}
+
+mixin service-info(title, descr)
+  section(class="service-info")
+    div(class="container")
+      div(class="content-container")
+        div(class="service-info__container")
+          h3(class="service-info__title") #{title}
+          p(class="text service-info__descr") #{descr}
+
+mixin service-next(arr)
+  section(class="service-next")
+    div(class="container")
+      div(class="content-container service-next__container")
+        div(class="service-next__content")
+          p(class="service-next__text") next
+          p(class="title title--main service-next__num") #{arr.num}
+          h2(class="title title--main service-next__title")
+            a(class="service-next__link" href=arr.link) #{arr.title}
+        div(class="service-next__last")
+          div(class="service-next__img-container")
+            img(class="service-next__img" src=arr.src alt="next")
