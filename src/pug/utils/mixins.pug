@@ -125,8 +125,23 @@ mixin service-next(arr)
         div(class="service-next__content")
           p(class="service-next__text") next
           p(class="title title--main service-next__num") #{arr.num}
-          h2(class="title title--main service-next__title")
+          h2(class="title service-next__title")
             a(class="service-next__link" href=arr.link) #{arr.title}
         div(class="service-next__last")
           div(class="service-next__img-container")
             img(class="service-next__img" src=arr.src alt="next")
+
+//- TICKER
+- var i = 0;
+- var j = 0;
+
+mixin tickerImg(arr)
+  div(class="ticker")
+    div(class="ticker__container")
+      while (i++ < arr.num)
+        div(class=["ticker__img-container"] class=arr.imgContainerClass)
+          img(class="ticker__img" src=arr.src alt=arr.alt)
+    div(class="ticker__container")
+      while (j++ < arr.num)
+        div(class=["ticker__img-container"] class=arr.imgContainerClass)
+          img(class="ticker__img" src=arr.src alt=arr.alt)

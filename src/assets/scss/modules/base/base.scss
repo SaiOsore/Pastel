@@ -20,6 +20,14 @@ body {
   color: $black;
 }
 
+.bgSecondary {
+  background-color: $secondary;
+}
+
+.bgPrimaryLight {
+  background-color: $primary-light;
+}
+
 .content {
   flex: 1 0 0;
 }

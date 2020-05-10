@@ -88,8 +88,14 @@
     }
   }
   &__img-container {
-    width: 100px;
+    width: 240px;
     margin-right: 1vw;
+    &.big {
+      width: 30vh;
+    }
+    &.small {
+      width: 100px;
+    }
   }
   &__img {
     max-width: 100%;
@@ -173,6 +179,13 @@
   }
   &__title {
     margin-bottom: 10px;
+    font-size: 122px;
+    @include tabletl {
+      font-size: 80px;
+    }
+    @include tabletm {
+      font-size: 32px;
+    }
   }
   &__num {
     font-size: 12vh;

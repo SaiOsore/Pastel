@@ -3,13 +3,21 @@ extends ../layouts/default
 block variables
   - const title = "Relax Page"
   - const description = "Relax Page"
-  - const navColor = "menu-black"
+  - const navColor = "primaryToPrimaryLighter"
+  - const bodyClass = "bgSecondary"
+  - const theme = "darkToPrimaryLighter"
   - const num = "002"
+  - 
+    ticker = { src: "../assets/img/relax/cloud1.png",
+        alt: "cloud",
+        num: 20,
+        imgContainerClass: "big"
+      }
   - 
     serviceMain = { pageTitle: "Релакс",
         title: "Предложение",
         descr: "Повседневная практика показывает, что сложившаяся структура организации представляет собой интересный эксперимент проверки.",
-        src: "../assets/img/date/date.jpg",
+        src: "../assets/img/relax/relax.jpg",
         alt: "date",
       }
   - 
@@ -34,7 +42,7 @@ block variables
   - 
     serviceNext = { title: "I-Завтрак",
         link: "./breakfast.html",
-        src: "../assets/img/date/date.jpg",
+        src: "../assets/img/breakfast/breakfast.jpg",
         num: "003",
       }
 
@@ -43,76 +51,6 @@ block content
     +service-main(serviceMain)
     +service-number(num)
     +service-info(serviceInfo.title, serviceInfo.descr)
-    div(class="ticker")
-      div(class="ticker__container")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-      div(class="ticker__container")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
-        div(class="ticker__img-container")
-          img(class="ticker__img" src="../assets/img/date/wine.png" alt="wine")
+    +tickerImg(ticker)
     +categories(categories)
     +service-next(serviceNext)

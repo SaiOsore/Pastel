@@ -22,8 +22,26 @@
 // }
 
 [data-theme='bw'] {
+  --color-dark: #000;
+  --color-light: #fff;
   --color-primary: #fff;
   --color-secondary: #000;
+}
+
+[data-theme='darkToPrimaryLighter'] {
+  --color-dark: #d0a6ae;
+}
+
+[data-theme='darkToPrimary'] {
+  --color-dark: #b22b38;
+}
+
+[data-theme='lightToPrimaryLighter'] {
+  --color-light: #d0a6ae;
+}
+
+[data-theme='primaryToPrimaryLighter'] {
+  --color-primary: #d0a6ae;
 }
 
 [data-theme='menu-black'] {
