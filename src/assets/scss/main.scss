@@ -4,6 +4,8 @@
 @import "utils/fonts";
 @import "utils/reset";
 @import "modules/base/base.scss";
+@import "modules/layouts/layouts.scss";
+@import "modules/colors/colors.scss";
 @import "modules/header/header.scss";
 @import "modules/menu/menu.scss";
 @import "modules/logo/logo.scss";
@@ -21,6 +23,8 @@
 @import "modules/ticker/ticker.scss";
 @import "modules/order/order.scss";
 @import "modules/forms/forms.scss";
+@import "modules/buttons/buttons.scss";
+@import "modules/text/text.scss";
 
 @import "modules/base/active.scss";
 

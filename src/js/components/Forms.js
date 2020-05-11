@@ -26,15 +26,15 @@ inputs.forEach((input) => {
 /*FORMS TABS*/
 const tabNav = document.querySelectorAll('.tab-nav'),
       tabContent = document.querySelectorAll('.tab-content'),
-      tabsContainer = document.querySelector('.tabs-container');
+      tabsContainer = document.querySelector('.tabs-container'),
+      tabContainerInputs = document.querySelectorAll('.tabs-container input');
 
-tabNav.forEach((item) => {
-  item.addEventListener('click', () => {
-    selectTabNav(item, tabContent);
-    if(item.type == "radio" && item.checked) {
-      tabsContainer.classList.add('active');
-    } else {
-      tabsContainer.classList.remove('active');
-    }
+if(tabNav) {
+  tabNav.forEach((item) => {
+    item.addEventListener('click', () => {
+      deselectRadioButtons(tabContainerInputs);
+      selectTabNav(item, tabContent);
+      selectRadioButtons(item, tabsContainer);
+    });
   });
-});
+}

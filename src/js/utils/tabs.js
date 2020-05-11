@@ -19,18 +19,17 @@ export function deselectTabContent(tabContent) {
   });
 }
 
-export function selectRadioButtons(inputs, container) {
-  inputs.forEach((input) => {
-    if(input.type == "radio" && input.checked) {
-      container.classList.add('active');
-    } else {
-      container.classList.remove('active');
-    }
-  });
+/*RADIO BUTTONS*/
+export function selectRadioButtons(input, container) {
+  if(input.type == "radio" && input.checked) {
+    container.classList.add('active');
+  } else {
+    container.classList.remove('active');
+  }
 }
 
-// export function deselectRadioButtons(inputs) {
-//   // inputs.forEach((input) => {
-//   //   input.checked = false;
-//   // });
-// }
+export function deselectRadioButtons(inputs) {
+  inputs.forEach((input) => {
+    input.checked = false;
+  });
+}
