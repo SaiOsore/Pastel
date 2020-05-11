@@ -1,0 +1,130 @@
+.form {
+  &__content {
+    width: 100%;
+  }
+  &__group {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    @include laptop {
+      flex-direction: column;
+    }
+  }
+  &__title {
+    display: block;
+    margin-bottom: 20px;
+    color: $white;
+  }
+  &__text {
+    font-size: 28px;
+  }
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    color: $white;
+    transition: all .5s;
+    &.focus {
+      top: -10px;
+    }
+    &--textarea {
+      top: 10%;
+    }
+  }
+  &__input {
+    width: calc(100% - 5px);
+    padding: 15px 25px;
+    margin-right: 5px;
+    border-bottom: 1px solid $white;
+    color: $white;
+    background: transparent;
+    transition: border .3s;
+    @include laptop {
+      margin-right: 0;
+    }
+    &--border {
+      border: 1px solid $white;
+    }
+  }
+  &__textarea {
+    border: 1px solid $white;
+    min-width: 100%;
+    min-height: 200px;
+    color: $white;
+  }
+  &__btn-container {
+    text-align: center;
+  }
+  &__btn {
+    padding: 20px 40px;
+    width: 400px;
+    font-size: 24px;
+    @include laptop {
+      width: 100%;
+    }
+  }
+  & .tab-content {
+    display: none;
+    &.active {
+      display: flex;
+    }
+  }
+  & .tabs-container {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.form-custom-radio {
+  margin-bottom: 40px;
+  &__label {
+    display: block;
+    width: calc(100% - 5px);
+    padding: 15px 25px;
+    color: $white;
+    border: 1px solid $white;
+    cursor: pointer;
+    margin-right: 5px;
+    @include laptop {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  &__view {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $white;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 14px;
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      content: '';
+      display: none;
+    }
+  }
+  &__input {
+    visibility: hidden;
+    opacity: 0;
+    &:checked + .form-custom-radio__view:before {
+      background-color: red;
+      display: block;
+    }
+  }
+}

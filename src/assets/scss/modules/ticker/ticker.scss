@@ -1,0 +1,37 @@
+.ticker {
+  padding: 30px 0;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    animation: ticker 18s linear infinite;
+    .ticker:hover & {
+      animation-play-state: paused;
+    }
+  }
+  &__img-container {
+    width: 240px;
+    margin-right: 1vw;
+    &.big {
+      width: 30vh;
+    }
+    &.small {
+      width: 100px;
+    }
+  }
+  &__img {
+    max-width: 100%;
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-108rem, 0, 0);
+  }
+}

@@ -1,0 +1,20 @@
+.order {
+  padding-bottom: 70px;
+  &__section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title {
+    font-size: 21vh;
+    z-index: 2;
+    color: $white;
+    @include laptop {
+      font-size: 12vh;
+    }
+    @include tablet {
+      font-size: 8vh;
+    }
+  }
+}

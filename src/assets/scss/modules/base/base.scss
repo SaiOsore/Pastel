@@ -20,6 +20,10 @@ body {
   color: $black;
 }
 
+.bgPrimary {
+  background-color: $primary;
+}
+
 .bgSecondary {
   background-color: $secondary;
 }
@@ -102,6 +106,14 @@ body {
   &:hover, &:focus {
     color: $white;
     background-color: $primary;
+  }
+  &--white {
+    color: $white;
+    border-color: $white;
+    &:hover, &:focus {
+      color: $secondary;
+      border-color: $secondary;
+    }
   }
 }
 

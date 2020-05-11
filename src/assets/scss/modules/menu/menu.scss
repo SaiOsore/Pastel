@@ -138,6 +138,9 @@
   &__item {
     visibility: hidden;
     position: absolute;
+    &.active {
+      visibility: visible;
+    }
     &--services {
       top: 0;
       right: calc(50% - 4vh);

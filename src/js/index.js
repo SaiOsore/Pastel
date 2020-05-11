@@ -4,6 +4,7 @@
 import Menu from './components/Menu';
 import FlyingImagesApp from './components/FlyingImagesApp';
 import SpecialLetters from './components/SpecialLetters';
+import Forms from './components/Forms';
 
 const FlyingImagesContainer = document.querySelector('.FlyingImagesContainer');
 

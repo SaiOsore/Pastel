@@ -1,0 +1,56 @@
+.categories {
+  padding: 50px 0;
+  &__content {
+    width: 100%;
+    text-align: center;
+  }
+  &__title {
+    width: 100%;
+    font-size: 14vh;
+    margin-bottom: 60px;
+    text-align: center;
+    @include tablet {
+      font-size: 6vh;
+    }
+  }
+  &__block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: left;
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+  &__descr {
+    padding: 20px;
+    font-size: 24px;
+    width: 80%;
+    border: 2px solid $black;
+    @include tablet {
+      width: 100%;
+      margin-right: 0;
+      order: 2;
+    }
+  }
+  &__price {
+    white-space: nowrap;
+    padding-left: 31px;
+    @include tablet {
+      padding-left: 0;
+      margin-bottom: 30px;
+    }
+  }
+  &__btn {
+    display: inline-block;
+    color: $black;
+    border-color: $black;
+    margin: 0 20% 0 auto;
+    font-size: 1.7rem;
+    padding: 1em 3em;
+    @include tablet {
+      margin: 0;
+      padding: 1em 2em;
+    }
+  }
+}

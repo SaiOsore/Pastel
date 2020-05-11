@@ -3,6 +3,148 @@ extends ../layouts/default
 block variables
   - const title = "Orders Page"
   - const description = "Orders Page"
+  - const bodyClass = "bgPrimary"
+  - const navColor = "bw"
 
 block content
-  div(class="orders")
+  main(class="order")
+    div(class="container")
+      div(class="section order__section")
+        h1(class="title title--main order__title") Заказать
+      div(class="content-container")
+        form(class="form")
+          div(class="form__content")
+            div(class="form-custom-radio")
+              h2(class="text form__title") Я хочу себя порадовать...
+              div(class="form__container")
+                div(class="form__group")
+                  label(class="form-custom-radio__label")
+                    input(class='form-custom-radio__input tab-nav' id='date' type='radio' name='service' value='date' data-tab="date")
+                    div(class="form-custom-radio__view")
+                    span(for='date' class="form__text form-custom-radio__text") Свидание
+                div(class="form__group")
+                  label(class="form-custom-radio__label")
+                    input(class='form-custom-radio__input tab-nav' id='relax' type='radio' name='service' value='relax' data-tab="relax")
+                    div(class="form-custom-radio__view")
+                    span(for='relax' class="form__text form-custom-radio__text") Релакс
+                div(class="form__group")
+                  label(class="form-custom-radio__label")
+                    input(class='form-custom-radio__input tab-nav' id='breakfast' type='radio' name='service' value='breakfast' data-tab="breakfast")
+                    div(class="form-custom-radio__view")
+                    span(for='breakfast' class="form__text form-custom-radio__text") I-Завтрак
+                div(class="form__group")
+                  label(class="form-custom-radio__label")
+                    input(class='form-custom-radio__input tab-nav' id='hun' type='radio' name='service' value='hun' data-tab="hun")
+                    div(class="form-custom-radio__view")
+                    span(for='hun' class="form__text form-custom-radio__text") Девичник
+            div(class="form-custom-radio tabs-container")
+              h2(class="text form__title") Мне подходит...
+              div(class="form__container tab-content" data-tab="date")
+                div(class="form__group")
+                  label(for='date-s' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='date-s' type='radio' name='price' value='date-s')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") S - 600грн
+                div(class="form__group")
+                  label(for='date-m' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='date-m' type='radio' name='price' value='date-m')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") M - 1200грн
+                div(class="form__group")
+                  label(for='date-l' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='date-l' type='radio' name='price' value='date-l')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") L - 2000грн
+              div(class="form__container tab-content" data-tab="relax")
+                div(class="form__group")
+                  label(for='relax-s' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='relax-s' type='radio' name='price' value='relax-s')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") S - 600грн
+                div(class="form__group")
+                  label(for='relax-m' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='relax-m' type='radio' name='price' value='relax-m')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") M - 1200грн
+                div(class="form__group")
+                  label(for='relax-l' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='relax-l' type='radio' name='price' value='relax-l')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") L - 2000грн
+              div(class="form__container tab-content" data-tab="breakfast")
+                div(class="form__group")
+                  label(for='breakfast-s' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='breakfast-s' type='radio' name='price' value='breakfast-s')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") S - 600грн
+                div(class="form__group")
+                  label(for='breakfast-m' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='breakfast-m' type='radio' name='price' value='breakfast-m')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") M - 1200грн
+                div(class="form__group")
+                  label(for='breakfast-l' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='breakfast-l' type='radio' name='price' value='breakfast-l')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") L - 2000грн
+              div(class="form__container tab-content" data-tab="hun")
+                div(class="form__group")
+                  label(for='hun-s' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='hun-s' type='radio' name='price' value='hun-s')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") S - 600грн
+                div(class="form__group")
+                  label(for='hun-m' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='hun-m' type='radio' name='price' value='hun-m')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") M - 1200грн
+                div(class="form__group")
+                  label(for='hun-l' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='hun-l' type='radio' name='price' value='hun-l')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") L - 2000грн
+                div(class="form__group")
+                  label(for='hun-xl' class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='hun-xl' type='radio' name='price' value='hun-xl')
+                    div(class="form-custom-radio__view")
+                    span(class="form__text form-custom-radio__text") XL - 3000грн
+            div(class="form-custom-radio")
+              h2(class="text form__title") Мне ближе стиль...
+              div(class="form__container")
+                div(class="form__group")
+                  label(class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='light' type='radio' name='styles' value='light')
+                    div(class="form-custom-radio__view")
+                    span(for='light' class="form__text form-custom-radio__text") Лайт
+                div(class="form__group")
+                  label(class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='vintage' type='radio' name='styles' value='vintage')
+                    div(class="form-custom-radio__view")
+                    span(for='vintage' class="form__text form-custom-radio__text") Винтаж
+                div(class="form__group")
+                  label(class="form-custom-radio__label")
+                    input(class='form-custom-radio__input' id='gothic' type='radio' name='styles' value='gothic')
+                    div(class="form-custom-radio__view")
+                    span(for='gothic' class="form__text form-custom-radio__text") Готика
+            div(class="form__container")
+              div(class="form__group" tabindex="0")
+                label(for="OrderName" class="form__label")
+                  span() Имя
+                input(class="form__input" id="OrderName" type="text" name="text" required="" aria-required="true")
+              div(class="form__group" tabindex="0")
+                label(for="OrderTel" class="form__label")
+                  span() Номер телефона
+                input(class="form__input" id="OrderTel" type="text" name="text" required="" aria-required="true")
+              div(class="form__group" tabindex="0")
+                label(for="OrderEmail" class="form__label")
+                  span() Email
+                input(class="form__input" id="OrderEmail" type="text" name="email" required="" aria-required="true")
+            div(class="form__container")
+              div(class="form__group" tabindex="0")
+                label(for="OrderText" class="form__label form__label--textarea")
+                  span() Напишите ваши дополнения к заказу
+                textarea(class="form__input form__textarea" id="OrderText" rows="3")
+            div(class="form__btn-container")
+              button(class="btn btn--white form__btn" type="submit") Заказать
+
+
