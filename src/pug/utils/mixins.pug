@@ -89,7 +89,7 @@ mixin categories(arr)
             div(class="text categories__block")
               p(class="categories__descr") #{categorie.descr}
               p(class="categories__price") UAH #{categorie.price}
-          a(class="btn categories__btn" href="./order.html") Заказать
+          a(class="btn btn--black categories__btn" href="./order.html") Заказать
 
 //- SERVICE PAGES
 mixin service-main(arr)
@@ -102,7 +102,8 @@ mixin service-main(arr)
           div(class="service-main__img-container")
             img(class="service-main__img" src=arr.src alt=arr.alt)
           div(class="service-main__text")
-            h2(class="text service-main__content-title") #{arr.title}
+            if(arr.title)
+              h2(class="text service-main__content-title") #{arr.title}
             p(class="text service-main__descr") #{arr.descr}
 
 mixin service-number(num)

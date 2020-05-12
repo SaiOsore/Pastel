@@ -41,7 +41,9 @@ tabNav.forEach((item) => {
   item.addEventListener('click', () => {
     selectTabNav(item, tabContent)
   });
-  // item.addEventListener('mouseout', () => {
-  //   deselectTabContent(tabContent);
-  // });
+  item.addEventListener('mouseout', () => {
+    setTimeout(() => {
+      deselectTabContent(tabContent);
+    }, 2000);
+  });
 });

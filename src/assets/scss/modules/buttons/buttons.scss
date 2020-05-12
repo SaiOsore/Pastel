@@ -16,6 +16,15 @@
     color: $white;
     background-color: $primary;
   }
+  &--black {
+    color: $black;
+    border-color: $black;
+    &:hover, &:focus {
+      color: $white;
+      background-color: $primary;
+      border-color: $white;
+    }
+  }
   &--white {
     color: $white;
     border-color: $white;
