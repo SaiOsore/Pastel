@@ -118,10 +118,10 @@
     line-height: 1.19;
     letter-spacing: 1vmax;
     color: $white;
-    @include laptopl {
+    @include laptop {
       font-size: 10vh;
     }
-    @include tabletl {
+    @include mobilel {
       font-size: 5vmax;
     }
   }
