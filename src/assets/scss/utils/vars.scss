@@ -124,6 +124,10 @@ $xxxl: var(--text-xxxl);
   --space-xxl:   calc(5.25 * var(--space-unit));
   --space-xxxl:  calc(8.5 * var(--space-unit));
   --space-xxxxl: calc(13.75 * var(--space-unit));
+  --container-padding: 2rem;
+  @include tabletl {
+    --container-padding: 1rem;
+  }
 }
 
 @supports(--css: variables) {
@@ -133,3 +137,6 @@ $xxxl: var(--text-xxxl);
     }
   }
 }
+
+//layout
+$container-padding: var(--container-padding);

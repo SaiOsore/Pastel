@@ -1,13 +1,25 @@
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
   &__nav {
+    position: relative;
     width: 100%;
+    height: $container-padding;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  & .logo, & .menu-btn  {
+    position: fixed;
+    top: $container-padding;
+    z-index: 10;
+  }
+  & .logo {
+    left: $container-padding;
+  }
+  & .menu-btn {
+    right: $container-padding;
   }
 }

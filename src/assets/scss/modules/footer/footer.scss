@@ -1,18 +1,28 @@
 .footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
   color: $primary;
   &__content {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &__nav {
+  &__nav, &__copyright {
+    position: fixed;
+    bottom: $container-padding;
+    z-index: 10;
+  }
+  &__nav, {
     font-size: 3vh;
+    left: $container-padding;
+  }
+  &__copyright {
+    font-size: 2vh;
+    right: $container-padding;
   }
   &__link {
     display: inline-block;
@@ -21,8 +31,5 @@
     &:last-child {
       margin-right: 0;
     }
-  }
-  &__copyright {
-    font-size: 2vh;
   }
 }
