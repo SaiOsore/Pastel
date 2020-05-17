@@ -147,3 +147,11 @@ mixin tickerImg(arr)
       while (j++ < arr.num)
         div(class=["ticker__img-container"] class=arr.imgContainerClass)
           img(class="ticker__img" src=arr.src alt=arr.alt)
+
+//- GALLERY
+mixin gallery(arr)
+  div(class="gallery__container")
+    for item in arr
+      div(class="gallery__block")
+        div(class="gallery__img-container")
+          img(class="gallery__img" src=item.src alt=item.alt)

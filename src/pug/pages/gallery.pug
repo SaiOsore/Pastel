@@ -3,6 +3,84 @@ extends ../layouts/default
 block variables
   - const title = "Gallery Page"
   - const description = "Gallery Page"
+  - 
+    galleryArr = [
+      { 
+        src: '../assets/img/gallery/1.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/2.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/3.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/4.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/5.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/6.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/1.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/2.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/3.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/4.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/5.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/6.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/1.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/2.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/3.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/4.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/5.jpg',
+        alt: 'clouds',
+      },
+      { 
+        src: '../assets/img/gallery/6.jpg',
+        alt: 'clouds',
+      },
+    ]
 
 block content
-  div(class="gallery")
+  div(class="gallery container")
+    main(class="section gallery__main")
+      h1(class="title title--main gallery__title") Галерея
+    +gallery(galleryArr)

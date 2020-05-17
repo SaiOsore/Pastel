@@ -1,0 +1,41 @@
+.gallery {
+  &__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__container {
+    padding: 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__block {
+    width: calc(25% - 40px);
+    margin: 20px;
+    @include tabletl {
+      width: calc(33.333% - 40px);
+    }
+    @include tabletm {
+      width: calc(50% - 40px);
+    }
+    @include mobilel {
+      width: 100%;
+      margin: 0 0 20px 0;
+    }
+  }
+  &__img-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+}
