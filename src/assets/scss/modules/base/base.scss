@@ -34,3 +34,11 @@ button {
 img {
   max-width: 100%;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}

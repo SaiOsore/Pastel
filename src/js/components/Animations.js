@@ -3,9 +3,6 @@ import anime from 'animejs/lib/anime.es.js';
 
 /*PRELOADER*/
 const preloader = document.querySelector('.preloader');
-if(preloader) {
-  document.body.classList.add('body-fixed');
-}
 
 const isPreloaderLoaded = () => {
   document.body.classList.remove('body-fixed');
