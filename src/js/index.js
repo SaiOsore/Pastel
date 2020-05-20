@@ -1,6 +1,7 @@
 // Main js file
 // import './example.js'
 
+import Animations from './components/Animations';
 import Menu from './components/Menu';
 import FlyingImagesApp from './components/FlyingImagesApp';
 import SpecialLetters from './components/SpecialLetters';

@@ -10,7 +10,8 @@ html(lang="ru")
     title #{title}
     meta(name='description' content=description)
     meta(name='viewport' content='width=device-width, initial-scale=1')
-  body(class=bodyClass data-theme=theme)
+  body(class=["body-fixed"] class=bodyClass data-theme=theme)
+    include ../blocks/preloader/preloader
     +header(navColor)
     .content
       block content

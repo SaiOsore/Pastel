@@ -1,4 +1,4 @@
-import { selectTabNav, selectRadioButtons, deselectRadioButtons } from '../utils/tabs'
+import { selectTabNav, deselectRadioButtons } from '../utils/tabs'
 
 const inputs = document.querySelectorAll('.form__input');
 
@@ -34,7 +34,27 @@ if(tabNav) {
     item.addEventListener('click', () => {
       deselectRadioButtons(tabContainerInputs);
       selectTabNav(item, tabContent);
-      selectRadioButtons(item, tabsContainer);
+      tabsContainer.classList.add('active');
     });
   });
 }
+
+/*TABS FOR ACCESSIBILITY*/
+const customRadio = document.querySelectorAll('.form-custom-radio__label');
+customRadio.forEach((element) => {
+  element.addEventListener('keydown', (e) => {
+    switch (e.keyCode) {
+      case 13:
+        if(element.classList.contains('form-custom-radio__label')) {
+          const input = element.childNodes[0];
+          if(input.classList.contains('tab-nav')) {
+            deselectRadioButtons(tabContainerInputs);
+          }
+          tabsContainer.classList.add('active');
+          input.checked = 'true';
+          selectTabNav(input, tabContent);
+        }
+      break;
+    }
+  });
+});

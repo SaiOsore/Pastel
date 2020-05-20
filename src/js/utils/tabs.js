@@ -1,6 +1,8 @@
 export function selectTabNav(item, tabContent) {
   const tabName = item.getAttribute('data-tab');
-  selectTabContent(tabName, tabContent);
+  if(tabName !== null) {
+    selectTabContent(tabName, tabContent);
+  }
 }
 
 export function selectTabContent(tab, tabContent) {
@@ -20,14 +22,6 @@ export function deselectTabContent(tabContent) {
 }
 
 /*RADIO BUTTONS*/
-export function selectRadioButtons(input, container) {
-  if(input.type == "radio" && input.checked) {
-    container.classList.add('active');
-  } else {
-    container.classList.remove('active');
-  }
-}
-
 export function deselectRadioButtons(inputs) {
   inputs.forEach((input) => {
     input.checked = false;
