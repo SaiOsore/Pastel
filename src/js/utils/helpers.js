@@ -6,6 +6,15 @@ export default function shuffle(a) {
   return a
 }
 
+export function preloadImgs(url) {
+  return new Promise((resolve, reject) => {
+    const img = document.createElement('img')
+    img.onload = () => resolve(img)
+    img.onerror = () => reject(new Error('Error loading image'))
+    img.src = url
+  })
+}
+
 export const toggleActive = (element, className) => {
   element.classList.toggle(className);
 }
