@@ -1,10 +1,10 @@
 // Main js file
 // import './example.js'
 
-import Animations from './components/Animations';
+import Preloader from './components/Preloader';
 import Menu from './components/Menu';
 import FlyingImagesApp from './components/FlyingImagesApp';
-import SpecialLetters from './components/SpecialLetters';
+import Text from './components/Text';
 import Forms from './components/Forms';
 
 const FlyingImagesContainer = document.querySelector('.FlyingImagesContainer');

@@ -3,7 +3,7 @@
 }
 
 .container {
-  padding: $container-padding;
+  padding: 0 $container-padding;
 }
 
 .content-container {
@@ -14,5 +14,6 @@
 .section {
   width: 100%;
   height: 100%;
-  min-height: calc(100vh - #{$container-padding});
+  min-height: 100vh;
+  padding: $container-padding 0;
 }

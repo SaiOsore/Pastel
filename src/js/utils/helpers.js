@@ -9,3 +9,26 @@ export default function shuffle(a) {
 export const toggleActive = (element, className) => {
   element.classList.toggle(className);
 }
+
+export const convertToSpans = (el, arr) => {
+  el.forEach((block) => {
+    const text = block.innerText;
+    const words = text.split(' ');
+    block.innerHTML = '';
+
+    words.forEach((word) => {
+      const letters = word.split('').filter(letter => !!letter.trim().length)
+      const wordSpan = document.createElement('span')
+      letters.forEach((letter) => {
+        const span = document.createElement('span');
+        span.className = 'letter';
+        span.innerText = letter;
+        wordSpan.appendChild(span);
+        wordSpan.className = 'word';
+        arr.push(span);
+      })
+      block.append(wordSpan, ' ');
+      block.className = 'text-block';
+    })
+  })
+}

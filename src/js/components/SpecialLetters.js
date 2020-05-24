@@ -18,14 +18,14 @@ const convertToSpans = () => {
       const wordSpan = document.createElement('span')
       letters.forEach((letter) => {
         const span = document.createElement('span');
-        span.className = 'about__letter';
+        span.className = 'letter';
         span.innerText = letter;
         wordSpan.appendChild(span);
-        wordSpan.className = 'about__word';
+        wordSpan.className = 'word';
         spans.push(span);
       })
       block.append(wordSpan, ' ');
-      block.className = 'about__text-block';
+      block.className = 'text-block';
     })
   })
 }

@@ -1,8 +1,12 @@
-import waypoint from 'waypoints/lib/noframework.waypoints.min.js';
 import anime from 'animejs/lib/anime.es.js';
+import { GLOBAL_DELAY } from '../utils/constants';
 
 /*PRELOADER*/
 const preloader = document.querySelector('.preloader');
+
+const bodyFixed = () => {
+  document.body.classList.add('body-fixed');
+};
 
 const isPreloaderLoaded = () => {
   document.body.classList.remove('body-fixed');
@@ -11,13 +15,16 @@ const isPreloaderLoaded = () => {
 
 const preloaderAnim = {
   targets: preloader,
-  delay: 1500,
+  delay: GLOBAL_DELAY,
   opacity: {
     value: 0,
     duration: 300,
     easing: 'linear',
   },
   offset: '+=100',
+  begin: function() {
+    bodyFixed();
+  },
   complete: function() {
     isPreloaderLoaded();
   }
@@ -32,33 +39,33 @@ tlPreloader
 .add(preloaderAnim)
 tlPreloader.play();
 
-var preloaderCounter = document.querySelector('.preloader__end');
+const preloaderCounter = document.querySelector('.preloader__end');
 
-var counter = {
+const counter = {
   nums: '0',
 }
 
-anime({
+const preloaderCounterAnimation =  anime({
   targets: counter,
   nums: '100',
   round: 1,
   easing: 'linear',
-  duration: 1500,
+  duration: GLOBAL_DELAY,
   update: function() {
     preloaderCounter.innerHTML = counter.nums;
   }
 });
 
-var preloaderCounterLine = document.querySelector('.preloader__line');
+const preloaderCounterLine = document.querySelector('.preloader__line');
 
-anime({
+const preloaderCounterLineAnimation = anime({
   targets: preloaderCounterLine,
   width: '100%',
   easing: 'linear',
-  duration: 1500,
+  duration: GLOBAL_DELAY,
 });
 
-var preloaderSVG = anime({
+const preloaderSVGAnimation = anime({
   targets: '.preloader__icon svg',
   scale: 2,
   direction: 'alternate',

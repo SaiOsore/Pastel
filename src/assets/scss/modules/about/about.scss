@@ -18,15 +18,15 @@
       font-size: 5vw;
     }
   }
-  &__text-block {
+  & .text-block {
     display: inline;
     position: relative;
   }
-  &__word {
+  & .word {
     letter-spacing: -.5px;
     white-space: nowrap;
   }
-  &__letter {
+  & .letter {
     display: inline-block;
     position: relative;
     white-space: pre;
