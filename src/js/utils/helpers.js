@@ -37,7 +37,7 @@ export const convertToSpans = (el, arr) => {
         arr.push(span);
       })
       block.append(wordSpan, ' ');
-      block.className = 'text-block';
+      block.className += ' text-block';
     })
   })
 }

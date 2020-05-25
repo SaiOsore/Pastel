@@ -1,3 +1,6 @@
+import waypoint from 'waypoints/lib/noframework.waypoints.min.js';
+import anime from 'animejs/lib/anime.es.js';
+
 const WEIGHTS = [500, 700, 900];
 const MAX_ROTATE = 5;
 const MAX_SCALE = 1;
@@ -14,4 +17,25 @@ export const SpecialLetters = (arr) => {
     }
     span.style.transform = `rotate(${rotate}deg) scale(${scale})`;
   })
+}
+
+export const lettersAnimation = (section, elClassName) => {
+  section.forEach(item => {
+    const letters = item.querySelectorAll(`${elClassName}`);
+    const SectionsScroll = new Waypoint({
+      element: item,
+      handler: function() {
+        const letterTranslation = anime({
+          targets: letters,
+          opacity: ['0', '1'],
+          translateY: ['-150%', '0%'],
+          easing: 'linear',
+          duration: 100,
+          delay: anime.stagger(80, {start: 0}),
+        });
+        this.destroy()
+      },
+      offset: '50%',
+    });
+  });
 }

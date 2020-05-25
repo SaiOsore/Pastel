@@ -78,6 +78,7 @@
   border-top: 1px solid $black;
   border-bottom: 1px solid $black;
   &__container {
+    padding: 40px 0;
     display: flex;
   }
   &__content {

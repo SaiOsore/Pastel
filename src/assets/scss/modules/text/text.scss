@@ -27,5 +27,8 @@
     @include tabletm {
       font-size: 42px;
     }
+    & .letter {
+      opacity: 0;
+    }
   }
 }

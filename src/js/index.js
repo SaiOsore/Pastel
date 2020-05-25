@@ -7,11 +7,14 @@ import FlyingImagesApp from './components/FlyingImagesApp';
 import Text from './components/Text';
 import Forms from './components/Forms';
 
-const FlyingImagesContainer = document.querySelector('.FlyingImagesContainer');
+
+/*INITIALIZATIONS OF FLYING IMAGES APP*/
 
 const initFlyingImagesApp = (target) => {
   const app = new FlyingImagesApp(target);
 }
+
+const FlyingImagesContainer = document.querySelector('.FlyingImagesContainer');
 
 if(FlyingImagesContainer) {
   initFlyingImagesApp(FlyingImagesContainer);
