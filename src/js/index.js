@@ -3,6 +3,7 @@
 
 import Preloader from './components/Preloader';
 import Menu from './components/Menu';
+import HomeSlider from './components/HomeSlider';
 import FlyingImagesApp from './components/FlyingImagesApp';
 import Text from './components/Text';
 import Forms from './components/Forms';

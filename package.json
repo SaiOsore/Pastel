@@ -60,6 +60,7 @@
   "dependencies": {
     "animejs": "^3.2.0",
     "matter-js": "^0.14.2",
+    "swiper": "^5.4.1",
     "vue": "^2.6.11",
     "waypoints": "^4.0.1"
   }
