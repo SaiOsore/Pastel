@@ -1,6 +1,11 @@
 .home {
+  position: relative;
+  height: 100%;
   overflow: hidden;
   width: 100%;
+  & .container {
+    height: 100%;
+  }
   &__section {
     position: absolute;
     top: 0;
