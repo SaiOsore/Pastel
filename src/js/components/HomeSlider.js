@@ -1,4 +1,5 @@
 const homeContainer = document.querySelector('.home .container');
+const homeLinks = document.querySelectorAll('.home__link');
 
 if(homeContainer) {
 
@@ -6,6 +7,7 @@ if(homeContainer) {
 
   const homeContainerHeight = homeSections[0].clientHeight;
   let length = 0;
+  let autoplay = false;
   let prevLength;
 
   const prevSlide = (e) => {
@@ -50,18 +52,24 @@ if(homeContainer) {
     }
   });
 
-  homeContainer.addEventListener('touchend', (e) => {
+  homeContainer.addEventListener('touchstart', (e) => {
+    if(e.target.classList.contains('letter')) {
+      return
+    }
     if(e.changedTouches[0].pageY < homeContainerHeight / 2) {
       prevSlide();
     } else {
       nextSlide();
     }
+    e.preventDefault();
   });
 
-  const autoplay = () => {
-    setInterval(() => {
-      nextSlide();
-    }, 10000);
+  const autoplayStart = (autoplay = false) => {
+    if(autoplay) {
+      setInterval(() => {
+        nextSlide();
+      }, 10000);
+    }
   }
 
 }
