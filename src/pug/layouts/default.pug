@@ -3,13 +3,14 @@ include ../utils/mixins
 block variables
 
 doctype html
-html(lang="ru")
+html(lang='ru')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     title #{title}
     meta(name='description' content=description)
     meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://unpkg.com/swiper/css/swiper.min.css')
   body(class=bodyClass data-theme=theme)
     include ../blocks/preloader/preloader
     +header(navColor)
