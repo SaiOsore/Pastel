@@ -1,16 +1,25 @@
+import { debounce } from '../utils/helpers';
+
 const homeContainer = document.querySelector('.home .container');
-const homeLinks = document.querySelectorAll('.home__link');
 
 if(homeContainer) {
 
   const homeSections = document.querySelectorAll('.home__section');
-
+  const sliderTimer = 1500;
   const homeContainerHeight = homeSections[0].clientHeight;
   let length = 0;
   let autoplay = false;
   let prevLength;
 
-  const prevSlide = (e) => {
+  const autoplayStart = (autoplay = false) => {
+    if(autoplay) {
+      setInterval(() => {
+        nextSlide();
+      }, 10000);
+    }
+  }
+
+  const prevSlideBody = (e) => {
     if(length === 0) {
       length = homeSections.length - 1;
       prevLength = 0;
@@ -22,7 +31,7 @@ if(homeContainer) {
     homeSections[length].classList.add('active');
   }
 
-  const nextSlide = (e) => {
+  const nextSlideBody = (e) => {
     if(length === homeSections.length - 1) {
       length = 0;
       prevLength = homeSections.length - 1;
@@ -33,6 +42,9 @@ if(homeContainer) {
     homeSections[prevLength].classList.remove('active');
     homeSections[length].classList.add('active');
   }
+
+  const prevSlide = debounce(prevSlideBody, sliderTimer);
+  const nextSlide = debounce(nextSlideBody, sliderTimer);
 
   homeContainer.addEventListener('wheel', (e) => {
     let moved = e.wheelDelta;
@@ -63,13 +75,5 @@ if(homeContainer) {
     }
     e.preventDefault();
   });
-
-  const autoplayStart = (autoplay = false) => {
-    if(autoplay) {
-      setInterval(() => {
-        nextSlide();
-      }, 10000);
-    }
-  }
 
 }
