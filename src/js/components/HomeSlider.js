@@ -5,8 +5,8 @@ const homeContainer = document.querySelector('.home .container');
 if(homeContainer) {
 
   const homeSections = document.querySelectorAll('.home__section');
-  const sliderTimer = 1500;
   const homeContainerHeight = homeSections[0].clientHeight;
+  const sliderTimer = 1500;
   let length = 0;
   let autoplay = false;
   let prevLength;
