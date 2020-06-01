@@ -8,6 +8,12 @@ export function debounce(f, ms) {
   };
 }
 
+export const timer = (callback, ms, ...args) => {
+  setTimeout(() => {
+    callback(...args);
+  }, ms);
+}
+
 export default function shuffle(a) {
   for(let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -25,19 +31,19 @@ export function preloadImgs(url) {
   })
 }
 
-export const toggleActive = (element, className) => {
+export const toggleClassName = (element, className) => {
   element.classList.toggle(className);
 }
 
-export const convertToSpans = (el, arr) => {
+export const convertToSpans = (el, arr = []) => {
   el.forEach((block) => {
     const text = block.innerText;
     const words = text.split(' ');
     block.innerHTML = '';
 
     words.forEach((word) => {
-      const letters = word.split('').filter(letter => !!letter.trim().length)
-      const wordSpan = document.createElement('span')
+      const letters = word.split('').filter(letter => !!letter.trim().length);
+      const wordSpan = document.createElement('span');
       letters.forEach((letter) => {
         const span = document.createElement('span');
         span.className = 'letter';

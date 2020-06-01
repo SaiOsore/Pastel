@@ -54,6 +54,7 @@
    color: $black;
    letter-spacing: 1rem;
    @include tabletl {
+    font-size: 17vh;
     margin-top: 0;
    }
   }

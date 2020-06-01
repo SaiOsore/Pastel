@@ -19,12 +19,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
+    display: none;
     transition: opacity 0.7s ease;
     &.active {
+      display: flex;
       opacity: 1;
     }
   }
@@ -79,12 +80,13 @@
     position: absolute;
     display: block;
     z-index: 1;
-    transition: rotate .3s;
+    transition: all 1s linear;
+    opacity: 0;
     &--first {
       width: 50vh;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, 0%);
       @include tabletl {
         width: 30vh;
       }

@@ -1,5 +1,6 @@
 import waypoint from 'waypoints/lib/noframework.waypoints.min.js';
 import anime from 'animejs/lib/anime.es.js';
+import { convertToSpans, timer } from '../utils/helpers';
 
 const WEIGHTS = [500, 700, 900];
 const MAX_ROTATE = 5;
@@ -19,23 +20,44 @@ export const SpecialLetters = (arr) => {
   })
 }
 
-export const lettersAnimation = (section, elClassName) => {
+export const lettersAnimation = (section, elClassName, reverse = false) => {
   section.forEach(item => {
     const letters = item.querySelectorAll(`${elClassName}`);
     const SectionsScroll = new Waypoint({
       element: item,
       handler: function() {
-        const letterTranslation = anime({
-          targets: letters,
-          opacity: ['0', '1'],
-          translateY: ['-150%', '0%'],
-          easing: 'linear',
-          duration: 100,
-          delay: anime.stagger(80, {start: 0}),
-        });
+        let letterTranslation;
+        if(reverse) {
+          letterTranslation = anime({
+            targets: letters,
+            opacity: ['1', '0'],
+            translateY: ['0%', '-150%'],
+            easing: 'linear',
+            duration: 100,
+            delay: anime.stagger(80, {start: 0}),
+          });
+        } else {
+          letterTranslation = anime({
+            targets: letters,
+            opacity: ['0', '1'],
+            translateY: ['-150%', '0%'],
+            easing: 'linear',
+            duration: 100,
+            delay: anime.stagger(80, {start: 0}),
+          });
+        }
         this.destroy()
       },
       offset: '50%',
     });
   });
+}
+
+export const titleAnimation = (delay = GLOBAL_DELAY, title, section, letters, reverse = false) => {
+  convertToSpans(title);
+  if(reverse) {
+    lettersAnimation(section, letters, reverse = true);
+  } else {
+    timer(lettersAnimation, delay, section, letters);
+  }
 }

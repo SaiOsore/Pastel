@@ -1,5 +1,5 @@
 import { selectTabNav, deselectTabContent } from '../utils/tabs'
-import { toggleActive } from '../utils/helpers'
+import { toggleClassName } from '../utils/helpers'
 
 import waypoint from 'waypoints/lib/noframework.waypoints.min.js';
 import anime from 'animejs/lib/anime.es.js';
@@ -19,9 +19,9 @@ menuBtn.addEventListener('click', function() {
     easing: 'linear',
     duration: 600,
     begin: function() {
-      toggleActive(menu, 'active');
-      toggleActive(menuBtn, 'active');
-      toggleActive(document.body, 'body-fixed');
+      toggleClassName(menu, 'active');
+      toggleClassName(menuBtn, 'active');
+      toggleClassName(document.body, 'body-fixed');
       if(document.body.getAttribute('data-theme') !== 'bw') {
         if(menuBtn.classList.contains('active')) {
           menuBtn.innerText = 'ЗАКРЫТЬ';
