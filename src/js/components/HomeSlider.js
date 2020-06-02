@@ -106,6 +106,8 @@ if(homeContainer) {
   const nextSlide = debounce(nextSlideBody, sliderTimer);
 
   /*LISTENERS*/
+
+  /*WHEEL LISTENER*/
   homeContainer.addEventListener('wheel', (e) => {
     let moved = e.wheelDelta;
     HomeSectionAnimation(true);
@@ -116,6 +118,7 @@ if(homeContainer) {
     }
   });
 
+  /*KEYS LISTENER*/
   window.addEventListener('keydown', (e) => {
     HomeSectionAnimation(true);
     if(e.keyCode == '38' || e.keyCode == '37') {
@@ -126,17 +129,47 @@ if(homeContainer) {
     }
   });
 
-  homeContainer.addEventListener('touchstart', (e) => {
-    HomeSectionAnimation(true);
-    if(e.target.classList.contains('letter')) {
-      return
+  /*TOUCH LISTENER*/
+  let initialPoint,
+      finalPoint;
+
+  homeContainer.addEventListener('touchstart', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    initialPoint = event.changedTouches[0];
+  }, false);
+
+  homeContainer.addEventListener('touchend', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    finalPoint=event.changedTouches[0];
+    let xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+    let yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+
+    if (xAbs > 20 || yAbs > 20) {
+      if(xAbs > yAbs) {
+        if (finalPoint.pageX < initialPoint.pageX) {
+          /*SWIPE LEFT*/
+          HomeSectionAnimation(true);
+          timer(prevSlide, GLOBAL_DELAY);
+        } else {
+          /*SWIPE RIGHT*/
+          HomeSectionAnimation(true);
+          timer(nextSlide, GLOBAL_DELAY);
+        }
+      } else {
+        if(finalPoint.pageY < initialPoint.pageY) {
+          /*SWIPE UP*/
+          HomeSectionAnimation(true);
+          timer(prevSlide, GLOBAL_DELAY);
+        } else {
+          /*SWIPE DOWN*/
+          HomeSectionAnimation(true);
+          timer(nextSlide, GLOBAL_DELAY);
+        }
+      }
     }
-    if(e.changedTouches[0].pageY < homeContainerHeight / 2) {
-      timer(prevSlide, GLOBAL_DELAY);
-    } else {
-      timer(nextSlide, GLOBAL_DELAY);
-    }
-    e.preventDefault();
-  });
+  }, false);
 
 }
