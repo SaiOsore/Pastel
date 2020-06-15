@@ -36,6 +36,16 @@ const imgAnimation = (img, delay = 2500, reverse = false) => {
   }
 }
 
+const secondaryImgAnimation = (el, delay, reverse = false) => {
+  timer(function() {
+    if(reverse) {
+      el.classList.remove('active');
+    } else {
+      el.classList.add('active');
+    }
+  }, delay);
+}
+
 const HomeSectionAnimation = (reverse = false, activeName = '.home__section.active', element = '.home__img-container') => {
   const activeSection = document.querySelector(`${activeName}`);
 

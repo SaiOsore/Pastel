@@ -79,8 +79,6 @@
   border-top: 1px solid $black;
   border-bottom: 1px solid $black;
   &__container {
-    padding: 40px 0;
-    display: flex;
   }
   &__content {
     width: 70%;
@@ -110,6 +108,8 @@
     margin-bottom: 10px;
   }
   &__link {
+    padding: 40px 0;
+    display: flex;
     color: $black;
   }
   &__img-container {

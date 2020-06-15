@@ -53,7 +53,11 @@ export const convertToSpans = (el, arr = []) => {
         arr.push(span);
       })
       block.append(wordSpan, ' ');
-      block.className += ' text-block';
     })
+
+    const isClassName = block.classList.contains('text-block');
+    if(!isClassName) {
+      block.className += ' text-block';
+    }
   })
 }

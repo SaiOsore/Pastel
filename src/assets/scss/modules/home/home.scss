@@ -1,7 +1,6 @@
 .home {
   position: relative;
   height: 100%;
-  // min-height: 100vh;
   width: 100%;
   &__wrapper {
     position: absolute;
@@ -52,7 +51,7 @@
     width: 100%;
     height: 100%;
     color: $primary;
-    &:hover {
+    &:hover, &:focus {
       color: $secondary;
       transition: color .3s;
     }
@@ -80,40 +79,50 @@
     position: absolute;
     display: block;
     z-index: 1;
-    transition: all 1s linear;
-    opacity: 0;
     &--first {
       width: 50vh;
       left: 50%;
       top: 50%;
+      opacity: 0;
+      transition: all 1s linear;
       transform: translate(-50%, 0%);
       @include tabletl {
         width: 30vh;
       }
     }
+    &--second, &--third {
+      display: none;
+      opacity: 0;
+      transform: rotate(0deg);
+      transition: all .2s linear;
+    }
     &--second {
-      position: absolute;
       top: 20%;
       left: -10%;
       width: 30vh;
-      transform: rotate(-25deg);
       z-index: -1;
       @include tabletl {
         top: 32%;
         width: 10vh;
       }
+      &.active {
+        opacity: 1;
+        transform: rotate(-25deg);
+      }
     }
     &--third {
-      position: absolute;
       top: 35%;
       right: -23%;
       width: 36vh;
-      transform: rotate(45deg);
       z-index: -1;
       @include tabletl {
         top: 47%;
         width: 16vh;
         transform: rotate(52deg);
+      }
+      &.active {
+        opacity: 1;
+        transform: rotate(45deg);
       }
     }
   }
