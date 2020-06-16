@@ -1,7 +1,7 @@
 import { debounce, timer } from '../utils/helpers';
 import { GLOBAL_DELAY } from '../utils/constants';
 import { titleAnimation } from '../utils/letters';
-import anime from 'animejs/lib/anime.es.js';
+import { imgAnimation } from '../utils/animations';
 
 const homeContainer = document.querySelector('.home .container');
 const homeTitles = document.querySelectorAll('.home__link span');
@@ -9,43 +9,6 @@ const homeSections = document.querySelectorAll('.home__section');
 const homeTitleLetters = '.home__link .letter';
 
 /*HOME ANIMATIONS FUNCTIONALITY*/
-const imgAnimation = (img, delay = 2500, reverse = false) => {
-  img.style.opacity = '0';
-  img.transform = 'translate(-50%, 0%)';
-  let imgAnimationBase;
-  if(reverse) {
-    imgAnimationBase = anime({
-      targets: img,
-      translateX: ['-50%', '-50%'],
-      translateY: '-150%',
-      opacity: '0',
-      easing: 'easeOutElastic(1, .8)',
-      duration: 100,
-      delay: delay,
-    });
-  } else {
-    imgAnimationBase = anime({
-      targets: img,
-      translateX: ['-50%', '-50%'],
-      translateY: '-50%',
-      opacity: '1',
-      easing: 'easeOutElastic(1, .8)',
-      duration: 100,
-      delay: delay,
-    });
-  }
-}
-
-const secondaryImgAnimation = (el, delay, reverse = false) => {
-  timer(function() {
-    if(reverse) {
-      el.classList.remove('active');
-    } else {
-      el.classList.add('active');
-    }
-  }, delay);
-}
-
 const HomeSectionAnimation = (reverse = false, activeName = '.home__section.active', element = '.home__img-container') => {
   const activeSection = document.querySelector(`${activeName}`);
 
@@ -60,7 +23,7 @@ const HomeSectionAnimation = (reverse = false, activeName = '.home__section.acti
   }
 }
 
-/*FIRST RENDER ANIMATION INITIAL*/
+/*FIRST RENDER ANIMATION INITIALIZATION*/
 if(homeTitles) {
   timer(function() {
     HomeSectionAnimation();
@@ -76,6 +39,11 @@ if(homeContainer) {
   let length = 0;
   let autoplay = false;
   let prevLength;
+
+  /*REVERSE MAIN ANIMATION*/
+  const HomeSectionAnimationRev = debounce(() => {
+    HomeSectionAnimation(true);
+  }, sliderTimer);
 
   /*FUNCTIONALITY*/
   const autoplayStart = (autoplay = false) => {
@@ -120,22 +88,22 @@ if(homeContainer) {
   /*WHEEL LISTENER*/
   homeContainer.addEventListener('wheel', (e) => {
     let moved = e.wheelDelta;
-    HomeSectionAnimation(true);
+    HomeSectionAnimationRev();
     if(moved > 0) {
-      timer(prevSlide, GLOBAL_DELAY);
+      timer(prevSlide, sliderTimer);
     } else if(moved < 0) {
-      timer(nextSlide, GLOBAL_DELAY);
+      timer(nextSlide, sliderTimer);
     }
   });
 
   /*KEYS LISTENER*/
   window.addEventListener('keydown', (e) => {
-    HomeSectionAnimation(true);
+    HomeSectionAnimationRev();
     if(e.keyCode == '38' || e.keyCode == '37') {
-      timer(prevSlide, GLOBAL_DELAY);
+      timer(prevSlide, sliderTimer);
     }
     if(e.keyCode == '40' || e.keyCode == '39') {
-      timer(nextSlide, GLOBAL_DELAY);
+      timer(nextSlide, sliderTimer);
     }
   });
 
@@ -161,22 +129,22 @@ if(homeContainer) {
       if(xAbs > yAbs) {
         if (finalPoint.pageX < initialPoint.pageX) {
           /*SWIPE LEFT*/
-          HomeSectionAnimation(true);
-          timer(prevSlide, GLOBAL_DELAY);
+          HomeSectionAnimationRev();
+          timer(prevSlide, sliderTimer);
         } else {
           /*SWIPE RIGHT*/
-          HomeSectionAnimation(true);
-          timer(nextSlide, GLOBAL_DELAY);
+          HomeSectionAnimationRev();
+          timer(nextSlide, sliderTimer);
         }
       } else {
         if(finalPoint.pageY < initialPoint.pageY) {
           /*SWIPE UP*/
-          HomeSectionAnimation(true);
-          timer(prevSlide, GLOBAL_DELAY);
+          HomeSectionAnimationRev();
+          timer(prevSlide, sliderTimer);
         } else {
           /*SWIPE DOWN*/
-          HomeSectionAnimation(true);
-          timer(nextSlide, GLOBAL_DELAY);
+          HomeSectionAnimationRev();
+          timer(nextSlide, sliderTimer);
         }
       }
     }

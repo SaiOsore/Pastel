@@ -1,6 +1,6 @@
 import Matter from './Matter';
 import { preloadImgs } from '../utils/helpers';
-import shuffle from '../utils/helpers';
+import { shuffle } from '../utils/helpers';
 
 const images = [
   { url: 'https://saiosore.github.io/portfolio/test/assets/c1.png', width: 283, height: 300 },

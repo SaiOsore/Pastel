@@ -14,20 +14,20 @@ export const timer = (callback, ms, ...args) => {
   }, ms);
 }
 
-export default function shuffle(a) {
+export function shuffle(a) {
   for(let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
     ;[a[i], a[j]] = [a[j], a[i]]
   }
-  return a
+  return a;
 }
 
 export function preloadImgs(url) {
   return new Promise((resolve, reject) => {
-    const img = document.createElement('img')
-    img.onload = () => resolve(img)
-    img.onerror = () => reject(new Error('Error loading image'))
-    img.src = url
+    const img = document.createElement('img');
+    img.onload = () => resolve(img);
+    img.onerror = () => reject(new Error('Error loading image'));
+    img.src = url;
   })
 }
 

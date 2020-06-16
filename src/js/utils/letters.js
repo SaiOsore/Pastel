@@ -32,18 +32,18 @@ export const lettersAnimation = (section, elClassName, reverse = false) => {
             targets: letters,
             opacity: ['1', '0'],
             translateY: ['0%', '-150%'],
-            easing: 'linear',
-            duration: 100,
-            delay: anime.stagger(80, {start: 0}),
+            easing: 'easeInOutCirc',
+            duration: 1000,
+            delay: anime.stagger(100, {start: 0}),
           });
         } else {
           letterTranslation = anime({
             targets: letters,
             opacity: ['0', '1'],
             translateY: ['-150%', '0%'],
-            easing: 'linear',
-            duration: 100,
-            delay: anime.stagger(80, {start: 0}),
+            easing: 'easeInOutCirc',
+            duration: 1000,
+            delay: anime.stagger(100, {start: 0}),
           });
         }
         this.destroy()
