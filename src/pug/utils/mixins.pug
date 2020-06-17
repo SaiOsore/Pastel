@@ -124,14 +124,14 @@ mixin service-next(arr)
   section(class="service-next")
     div(class="container")
       div(class="content-container service-next__container")
-        div(class="service-next__content")
-          p(class="service-next__text") дальше
-          p(class="title title--main service-next__num") #{arr.num}
-          h2(class="title service-next__title")
-            a(class="service-next__link" href=arr.link) #{arr.title}
-        div(class="service-next__last")
-          div(class="service-next__img-container")
-            img(class="service-next__img" src=arr.src alt="next")
+        a(class="service-next__link" href=arr.link)
+          div(class="service-next__content")
+            p(class="service-next__text") дальше
+            p(class="title title--main service-next__num") #{arr.num}
+            h2(class="title service-next__title") #{arr.title}
+          div(class="service-next__last")
+            div(class="service-next__img-container")
+              img(class="service-next__img" src=arr.src alt="next")
 
 //- TICKER
 - var i = 0;

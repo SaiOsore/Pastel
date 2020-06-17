@@ -1,35 +1,30 @@
-import { convertToSpans } from '../utils/helpers';
-import { lettersAnimation, SpecialLetters } from '../utils/letters';
+import { convertToSpans, timer } from '../utils/helpers';
+import { lettersAnimation, SpecialLetters, wordAnimation } from '../utils/letters';
 import { GLOBAL_DELAY } from '../utils/constants';
+import anime from 'animejs/lib/anime.es.js';
 
+/*ABOUT PAGE TEXT CONVERT*/
+const aboutPageSection = document.querySelectorAll('.about .section');
 const aboutPageEl = document.querySelectorAll('.about__text span');
+const aboutPageLetters = '.about__text .letter';
 const aboutPageSpans = [];
 
 if(aboutPageEl) {
   convertToSpans(aboutPageEl, aboutPageSpans);
   SpecialLetters(aboutPageSpans);
+  const aboutWords = document.querySelectorAll('.about .word');
+  aboutWords.forEach((word) => {
+    word.style.opacity = '0';
+  });
+  timer(wordAnimation, GLOBAL_DELAY, aboutWords);
 }
 
-const homeTitles = document.querySelectorAll('.home__link span');
-const homeSections = document.querySelectorAll('.home__section');
-const homeTitleLetters = '.home__link .letter';
-const homeTitlesSpans = [];
-
-if(homeTitles) {
-  convertToSpans(homeTitles, homeTitlesSpans);
-  setTimeout(() => {
-    lettersAnimation(homeSections, homeTitleLetters);
-  }, GLOBAL_DELAY);
-}
-
+/*MAIN TITLES ANIMATION*/
 const titlesMain = document.querySelectorAll('.title--main');
 const titleMainLetters = '.title--main .letter';
 const titleSections = document.querySelectorAll('.section');
-const titlesSpans = [];
 
 if(titlesMain) {
-  convertToSpans(titlesMain, titlesSpans);
-  setTimeout(() => {
-    lettersAnimation(titleSections, titleMainLetters);
-  }, GLOBAL_DELAY);
+  convertToSpans(titlesMain);
+  timer(lettersAnimation, GLOBAL_DELAY, titleSections, titleMainLetters);
 }

@@ -1,16 +1,51 @@
-import { debounce } from '../utils/helpers';
+import { debounce, timer } from '../utils/helpers';
+import { GLOBAL_DELAY } from '../utils/constants';
+import { titleAnimation } from '../utils/letters';
+import { imgAnimation } from '../utils/animations';
 
 const homeContainer = document.querySelector('.home .container');
+const homeTitles = document.querySelectorAll('.home__link span');
+const homeSections = document.querySelectorAll('.home__section');
+const homeTitleLetters = '.home__link .letter';
 
+/*HOME ANIMATIONS FUNCTIONALITY*/
+const HomeSectionAnimation = (reverse = false, activeName = '.home__section.active', element = '.home__img-container') => {
+  const activeSection = document.querySelector(`${activeName}`);
+
+  if(activeSection) {
+    const mainImgContainers = activeSection.querySelectorAll(`${element}`);
+    const mainImgContainer = mainImgContainers[0];
+    const secondImgContainer = mainImgContainers[1];
+    const thirdImgContainer = mainImgContainers[2];
+
+    imgAnimation(mainImgContainer, 0, reverse);
+    titleAnimation(1200, homeTitles, homeSections, homeTitleLetters, reverse);
+  }
+}
+
+/*FIRST RENDER ANIMATION INITIALIZATION*/
+if(homeTitles) {
+  timer(function() {
+    HomeSectionAnimation();
+  }, GLOBAL_DELAY - 200);
+}
+
+/*CUSTOM SLIDER*/
 if(homeContainer) {
 
   const homeSections = document.querySelectorAll('.home__section');
   const homeContainerHeight = homeSections[0].clientHeight;
-  const sliderTimer = 1500;
+  const sliderTimer = GLOBAL_DELAY;
   let length = 0;
   let autoplay = false;
   let prevLength;
 
+  /*REVERSE MAIN ANIMATION*/
+  const HomeSectionAnimationRev = debounce(() => {
+    HomeSectionAnimation(true);
+  }, sliderTimer);
+
+  /*FUNCTIONALITY*/
   const autoplayStart = (autoplay = false) => {
     if(autoplay) {
       setInterval(() => {
@@ -29,6 +64,7 @@ if(homeContainer) {
     }
     homeSections[prevLength].classList.remove('active');
     homeSections[length].classList.add('active');
+    HomeSectionAnimation();
   }
 
   const nextSlideBody = (e) => {
@@ -41,39 +77,77 @@ if(homeContainer) {
     }
     homeSections[prevLength].classList.remove('active');
     homeSections[length].classList.add('active');
+    HomeSectionAnimation();
   }
 
   const prevSlide = debounce(prevSlideBody, sliderTimer);
   const nextSlide = debounce(nextSlideBody, sliderTimer);
 
+  /*LISTENERS*/
+
+  /*WHEEL LISTENER*/
   homeContainer.addEventListener('wheel', (e) => {
     let moved = e.wheelDelta;
+    HomeSectionAnimationRev();
     if(moved > 0) {
-      prevSlide();
+      timer(prevSlide, sliderTimer);
     } else if(moved < 0) {
-      nextSlide();
+      timer(nextSlide, sliderTimer);
     }
   });
 
+  /*KEYS LISTENER*/
   window.addEventListener('keydown', (e) => {
+    HomeSectionAnimationRev();
     if(e.keyCode == '38' || e.keyCode == '37') {
-      prevSlide();
+      timer(prevSlide, sliderTimer);
     }
     if(e.keyCode == '40' || e.keyCode == '39') {
-      nextSlide();
+      timer(nextSlide, sliderTimer);
     }
   });
 
-  homeContainer.addEventListener('touchstart', (e) => {
-    if(e.target.classList.contains('letter')) {
-      return
+  /*TOUCH LISTENER*/
+  let initialPoint,
+      finalPoint;
+
+  homeContainer.addEventListener('touchstart', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    initialPoint = event.changedTouches[0];
+  }, false);
+
+  homeContainer.addEventListener('touchend', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    finalPoint=event.changedTouches[0];
+    let xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+    let yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+
+    if (xAbs > 20 || yAbs > 20) {
+      if(xAbs > yAbs) {
+        if (finalPoint.pageX < initialPoint.pageX) {
+          /*SWIPE LEFT*/
+          HomeSectionAnimationRev();
+          timer(prevSlide, sliderTimer);
+        } else {
+          /*SWIPE RIGHT*/
+          HomeSectionAnimationRev();
+          timer(nextSlide, sliderTimer);
+        }
+      } else {
+        if(finalPoint.pageY < initialPoint.pageY) {
+          /*SWIPE UP*/
+          HomeSectionAnimationRev();
+          timer(prevSlide, sliderTimer);
+        } else {
+          /*SWIPE DOWN*/
+          HomeSectionAnimationRev();
+          timer(nextSlide, sliderTimer);
+        }
+      }
     }
-    if(e.changedTouches[0].pageY < homeContainerHeight / 2) {
-      prevSlide();
-    } else {
-      nextSlide();
-    }
-    e.preventDefault();
-  });
+  }, false);
 
 }
