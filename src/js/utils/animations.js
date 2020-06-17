@@ -1,4 +1,5 @@
 import anime from 'animejs/lib/anime.es.js';
+import waypoint from 'waypoints/lib/noframework.waypoints.min.js';
 
 export const imgAnimation = (img, delay = 2500, reverse = false) => {
   img.style.opacity = '0';
@@ -35,4 +36,41 @@ export const secondaryImgAnimation = (el, delay, reverse = false) => {
       el.classList.add('active');
     }
   }, delay);
+}
+
+export const sectionAnimation = (sections, offset='50%') => {
+  sections.forEach(section => {
+    const SectionsScroll = new Waypoint({
+      element: section,
+      handler: function() {
+        const sectionTranslation = anime({
+          targets: section,
+          opacity: ['0', '1'],
+          translateX: ['50%', '0%'],
+          easing: 'linear',
+          duration: 1100,
+        });
+        this.destroy()
+      },
+      offset: offset,
+    });
+  });
+}
+
+export const sectionOpacityAnimation = (sections, offset='50%') => {
+  sections.forEach(section => {
+    const SectionsScroll = new Waypoint({
+      element: section,
+      handler: function() {
+        const sectionTranslation = anime({
+          targets: section,
+          opacity: ['0', '1'],
+          easing: 'linear',
+          duration: 1100,
+        });
+        this.destroy()
+      },
+      offset: offset,
+    });
+  });
 }

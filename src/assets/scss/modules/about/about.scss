@@ -4,6 +4,15 @@
   @include tabletl {
     padding: 60px 1rem;
   }
+  & .section {
+    @include tabletl {
+      min-height: 100%;
+      padding: 20px 0;
+    }
+    @include mobilel {
+      padding: 0;
+    }
+  }
   &__title {
     font-size: 7vw;
   }

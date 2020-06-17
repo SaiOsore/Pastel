@@ -48,7 +48,7 @@ export const lettersAnimation = (section, elClassName, reverse = false) => {
         }
         this.destroy()
       },
-      offset: '50%',
+      offset: '70%',
     });
   });
 }
@@ -60,4 +60,17 @@ export const titleAnimation = (delay = GLOBAL_DELAY, title, section, letters, re
   } else {
     timer(lettersAnimation, delay, section, letters);
   }
+}
+
+export const wordAnimation = (words) => {
+  words.forEach(word => {
+    const wordTranslation = anime({
+      targets: word,
+      opacity: ['0', '1'],
+      translateY: ['-30%', '0%'],
+      easing: 'linear',
+      duration: 1000,
+      delay: anime.stagger(400, {start: 100}),
+    });
+  });
 }
