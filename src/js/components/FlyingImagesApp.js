@@ -12,8 +12,8 @@ const images = [
   // { url: 'https://saiosore.github.io/portfolio/test/assets/c7.png', width: 300, height: 272 },
   { url: 'https://saiosore.github.io/portfolio/test/assets/c8.png', width: 289, height: 300 },
   { url: 'https://saiosore.github.io/portfolio/test/assets/c9.png', width: 296, height: 300 },
-  { url: 'https://saiosore.github.io/portfolio/test/assets/c10.png', width: 300, height: 300 },
-  { url: 'https://saiosore.github.io/portfolio/test/assets/c11.png', width: 300, height: 272 },
+  // { url: 'https://saiosore.github.io/portfolio/test/assets/c10.png', width: 300, height: 300 },
+  // { url: 'https://saiosore.github.io/portfolio/test/assets/c11.png', width: 300, height: 272 },
   { url: 'https://saiosore.github.io/portfolio/test/assets/c12.png', width: 289, height: 300 },
   { url: 'https://saiosore.github.io/portfolio/test/assets/c13.png', width: 296, height: 300 },
   { url: 'https://saiosore.github.io/portfolio/test/assets/c14.png', width: 300, height: 298 },
@@ -28,7 +28,7 @@ const images = [
 
 const MAX_IMAGES = 8
 
-export default class FlyingImagesApp {
+class FlyingImagesApp {
   constructor(element) {
     this.images = shuffle(images)
     this.bodies = []
@@ -118,4 +118,16 @@ export default class FlyingImagesApp {
     this.addBounds()
     this.createImages()
   }
+}
+
+/*INITIALIZATIONS OF FLYING IMAGES APP*/
+
+export const initFlyingImagesApp = (target) => {
+  const app = new FlyingImagesApp(target);
+}
+
+const FlyingImagesContainer = document.querySelector('.FlyingImagesContainer');
+
+if(FlyingImagesContainer) {
+  initFlyingImagesApp(FlyingImagesContainer);
 }
