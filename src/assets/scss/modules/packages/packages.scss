@@ -17,5 +17,9 @@
   }
   &__descr {
     color: $primary;
+    font-size: $l2;
+    @include tabletl {
+      font-size: $m;
+    }
   }
 }

@@ -5,7 +5,7 @@
   &__group {
     width: 100%;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     display: flex;
   }
   &__container {
@@ -32,7 +32,7 @@
     color: $white;
     transition: all .5s;
     &.focus {
-      top: -10px;
+      top: -13px;
     }
     &--textarea {
       top: 10%;
@@ -46,6 +46,7 @@
     color: $white;
     background: transparent;
     transition: border .3s;
+    font-size: $xs;
     @include laptop {
       margin-right: 0;
     }

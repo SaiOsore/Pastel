@@ -60,8 +60,11 @@
     font-size: 6vh;
   }
   &__text {
-    font-size: 32px;
+    font-size: $xl;
     line-height: 1.2;
+    @include tabletl {
+      font-size: $l2;
+    }
   }
   &__btns-container {
     display: flex;
@@ -73,6 +76,7 @@
   &__btn {
     margin-right: 60px;
     margin-bottom: 20px;
+    font-size: $l;
     &:last-child {
       margin-right: 0;
     }
