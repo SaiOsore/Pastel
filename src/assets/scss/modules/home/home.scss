@@ -141,7 +141,19 @@
   &__descr {
     position: absolute;
     width: 28%;
-    font-size: 14px;
+    font-size: $l2;
+    color: $primary;
+    @include laptopl {
+      font-size: $xxs;
+    }
+    @include tabletl {
+      font-size: $m;
+      width: 90%;
+      text-align: center;
+    }
+    @include mobilel {
+      font-size: $xxs;
+    }
     &--top {
       top: 15%;
       left: 5%;
@@ -149,6 +161,10 @@
     &--bottom {
       bottom: 15%;
       right: 5%;
+      @include tabletl {
+        bottom: 13%;
+        right: 5%;
+      }
     }
   }
 }
