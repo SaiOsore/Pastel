@@ -15,8 +15,6 @@ const HomeSectionAnimation = (reverse = false, activeName = '.home__section.acti
   if(activeSection) {
     const mainImgContainers = activeSection.querySelectorAll(`${element}`);
     const mainImgContainer = mainImgContainers[0];
-    const secondImgContainer = mainImgContainers[1];
-    const thirdImgContainer = mainImgContainers[2];
 
     imgAnimation(mainImgContainer, 0, reverse);
     titleAnimation(1200, homeTitles, homeSections, homeTitleLetters, reverse);
@@ -112,15 +110,10 @@ if(homeContainer) {
       finalPoint;
 
   homeContainer.addEventListener('touchstart', function(event) {
-    event.preventDefault();
-    event.stopPropagation();
     initialPoint = event.changedTouches[0];
   }, false);
 
   homeContainer.addEventListener('touchend', function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-
     finalPoint=event.changedTouches[0];
     let xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
     let yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
