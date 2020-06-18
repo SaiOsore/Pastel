@@ -96,11 +96,12 @@ if(homeContainer) {
 
   /*KEYS LISTENER*/
   window.addEventListener('keydown', (e) => {
-    HomeSectionAnimationRev();
     if(e.keyCode == '38' || e.keyCode == '37') {
+      HomeSectionAnimationRev();
       timer(prevSlide, sliderTimer);
     }
     if(e.keyCode == '40' || e.keyCode == '39') {
+      HomeSectionAnimationRev();
       timer(nextSlide, sliderTimer);
     }
   });
