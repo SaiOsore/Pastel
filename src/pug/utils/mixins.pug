@@ -87,8 +87,10 @@ mixin categories(arr)
         div(class="categories__content")
           for categorie in arr
             div(class="text categories__block")
-              p(class="categories__descr") #{categorie.descr}
-              p(class="categories__price") UAH #{categorie.price}
+              div(class="categories__descr") 
+                p() #{categorie.descr}
+                p() Длительность: #{categorie.time}
+              p(class="categories__price") #{categorie.price}
           a(class="btn btn--black categories__btn" href="./order.html") Заказать
 
 //- SERVICE PAGES

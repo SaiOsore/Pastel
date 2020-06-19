@@ -13,6 +13,12 @@ const isPreloaderLoaded = () => {
   preloader.classList.add('hidden');
 };
 
+window.onload = function() {
+  setTimeout(function() {
+    isPreloaderLoaded();
+  }, GLOBAL_DELAY);
+}
+
 const preloaderAnim = {
   targets: preloader,
   delay: GLOBAL_DELAY,
@@ -26,7 +32,7 @@ const preloaderAnim = {
     bodyFixed();
   },
   complete: function() {
-    isPreloaderLoaded();
+
   }
 };
 

@@ -1,5 +1,6 @@
 import anime from 'animejs/lib/anime.es.js';
 import waypoint from 'waypoints/lib/noframework.waypoints.min.js';
+import { timer } from '../utils/helpers';
 
 export const imgAnimation = (img, delay = 2500, reverse = false) => {
   img.style.opacity = '0';
@@ -28,14 +29,16 @@ export const imgAnimation = (img, delay = 2500, reverse = false) => {
   }
 }
 
-export const secondaryImgAnimation = (el, delay, reverse = false) => {
-  timer(function() {
-    if(reverse) {
-      el.classList.remove('active');
-    } else {
-      el.classList.add('active');
-    }
-  }, delay);
+export const activeClassAnimation = (sections, delay = 1000, reverse = false, className = 'active') => {
+  sections.forEach(section => {
+    timer(function() {
+      if(reverse) {
+        section.classList.remove(className);
+      } else {
+        section.classList.add(className);
+      }
+    }, delay);
+  });
 }
 
 export const sectionAnimation = (sections, offset='50%') => {
@@ -71,6 +74,17 @@ export const sectionOpacityAnimation = (sections, offset='50%') => {
         this.destroy()
       },
       offset: offset,
+    });
+  });
+}
+
+export const opacityAnimation = (sections, duration=1500, offset='50%') => {
+  sections.forEach(section => {
+    const sectionTranslation = anime({
+      targets: section,
+      opacity: ['0', '1'],
+      easing: 'linear',
+      duration: duration,
     });
   });
 }

@@ -143,8 +143,10 @@
     width: 28%;
     font-size: $l2;
     color: $primary;
+    opacity: 0;
+    transition: opacity 3s;
     @include laptopl {
-      font-size: $xxs;
+      font-size: $m;
     }
     @include tabletl {
       font-size: $m;
@@ -154,13 +156,26 @@
     @include mobilel {
       font-size: $xxs;
     }
-    &--top {
+    &.active {
+      opacity: 1;
+    }
+    &--quote {
       top: 15%;
       left: 5%;
+      text-align: right;
+      @include laptopm {
+        left: 2%;
+      }
+      @include tabletl {
+        display: none;
+      }
     }
-    &--bottom {
+    &--about {
       bottom: 15%;
       right: 5%;
+      @include laptopm {
+        right: 2%;
+      }
       @include tabletl {
         bottom: 13%;
         right: 5%;

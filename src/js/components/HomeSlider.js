@@ -1,7 +1,7 @@
 import { debounce, timer } from '../utils/helpers';
 import { GLOBAL_DELAY } from '../utils/constants';
 import { titleAnimation } from '../utils/letters';
-import { imgAnimation } from '../utils/animations';
+import { imgAnimation, activeClassAnimation } from '../utils/animations';
 
 const homeContainer = document.querySelector('.home .container');
 const homeTitles = document.querySelectorAll('.home__link span');
@@ -15,6 +15,15 @@ const HomeSectionAnimation = (reverse = false, activeName = '.home__section.acti
   if(activeSection) {
     const mainImgContainers = activeSection.querySelectorAll(`${element}`);
     const mainImgContainer = mainImgContainers[0];
+    const mainDescriptions = document.querySelectorAll('.home__descr ');
+
+    if(mainDescriptions) {
+      if(reverse) {
+        activeClassAnimation(mainDescriptions, 50, reverse);
+      } else {
+        activeClassAnimation(mainDescriptions, GLOBAL_DELAY, reverse);
+      }
+    }
 
     imgAnimation(mainImgContainer, 0, reverse);
     titleAnimation(1200, homeTitles, homeSections, homeTitleLetters, reverse);
