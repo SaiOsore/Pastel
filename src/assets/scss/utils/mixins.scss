@@ -76,26 +76,26 @@
 
 // width
 @mixin r($width) {
-  @media only screen and (max-width: $width+ "px"){
+  @media only screen and (max-width: $width+ "px") {
     @content;
   }
 }
 
 @mixin rmin($width) {
-  @media only screen and (min-width: $width+ "px"){
+  @media only screen and (min-width: $width+ "px") {
     @content;
   }
 }
 
 // height
 @mixin rh($height) {
-  @media only screen and (max-height: $height + "px"){
+  @media only screen and (max-height: $height + "px") {
     @content;
   }
 }
 
 @mixin rhmin($height) {
-  @media only screen and (min-height: $height + "px"){
+  @media only screen and (min-height: $height + "px") {
     @content;
   }
 }

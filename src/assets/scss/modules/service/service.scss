@@ -3,6 +3,9 @@
 }
 
 .service-main {
+  @include tabletl {
+    margin-bottom: 20px;
+  }
   &__section {
     display: flex;
     align-items: center;
@@ -34,9 +37,13 @@
   &__text {
     width: 30%;
     padding-left: 10%;
+    font-size: $m;
     @include tabletl {
       padding-left: 0;
       width: 100%;
+    }
+    @include mobilel {
+      font-size: $s;
     }
   }
   &__content-title {
@@ -48,6 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-bottom: 20px;
   &__container {
    font-size: 30vh;
    margin-top: -14vh;
@@ -61,6 +69,7 @@
 }
 
 .service-info {
+  margin-bottom: 27px;
   &__container {
     width: 40%;
     @include tabletl {
@@ -69,9 +78,13 @@
   }
   &__title {
     margin-bottom: 10px;
+    font-size: $l2;
   }
   &__descr {
-
+    font-size: $m;
+    @include mobilel {
+      font-size: $s;
+    }
   }
 }
 

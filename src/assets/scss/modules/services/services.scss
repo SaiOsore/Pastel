@@ -62,8 +62,11 @@
   &__text {
     font-size: $xl;
     line-height: 1.2;
-    @include tabletl {
+    @include laptopl {
       font-size: $l2;
+    }
+    @include tabletl {
+      font-size: $l;
     }
   }
   &__btns-container {
