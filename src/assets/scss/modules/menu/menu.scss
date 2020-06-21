@@ -159,12 +159,12 @@
     &--styles {
       top: calc(50% - 33vh);
       right: calc(50% + 11vh);
-      width: 30vh;
+      width: 60vh;
     }
     &--order {
       top: calc(50% - 36vh);
-      right: calc(50% - 30vh);
-      width: 95vh;
+      right: calc(50% - -20vh);
+      width: 45vh;
     }
     &--date {
       top: calc(50% - 44vh);
@@ -188,14 +188,14 @@
       width: 61vh;
     }
     &--contact {
-      top: calc(50% - 11vh);
-      right: calc(50% - 20vh);
-      width: 102vh;
+      top: calc(50% - 40vh);
+      right: calc(50% - -10vh);
+      width: 61vh;
     }
     &--about {
-      top: calc(50% - 52vh);
-      right: calc(50% - 10vh);
-      width: 90vh;
+      top: calc(50% - 30vh);
+      right: calc(50% + 16vh);
+      width: 65vh;
     }
   }
   &__img {

@@ -51,14 +51,30 @@
     vertical-align: middle;
   }
   &__link {
+    position: relative;
     background: $black;
     color: $white;
     cursor: pointer;
     display: inline-block;
     line-height: 1em;
     padding: .3em .35em .2em;
-    position: relative;
+    margin-right: .3em;
     text-indent: .1em;
     z-index: 1;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $primary;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity .5s;
+    }
+    &:hover:before {
+      opacity: 1;
+    }
   }
 }

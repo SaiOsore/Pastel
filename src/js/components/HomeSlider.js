@@ -133,21 +133,21 @@ if(homeContainer) {
         if (finalPoint.pageX < initialPoint.pageX) {
           /*SWIPE LEFT*/
           HomeSectionAnimationRev();
-          timer(prevSlide, sliderTimer);
+          timer(nextSlide, sliderTimer);
         } else {
           /*SWIPE RIGHT*/
           HomeSectionAnimationRev();
-          timer(nextSlide, sliderTimer);
+          timer(prevSlide, sliderTimer);
         }
       } else {
         if(finalPoint.pageY < initialPoint.pageY) {
           /*SWIPE UP*/
           HomeSectionAnimationRev();
-          timer(prevSlide, sliderTimer);
+          timer(nextSlide, sliderTimer);
         } else {
           /*SWIPE DOWN*/
           HomeSectionAnimationRev();
-          timer(nextSlide, sliderTimer);
+          timer(prevSlide, sliderTimer);
         }
       }
     }

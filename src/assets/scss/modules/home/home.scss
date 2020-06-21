@@ -29,13 +29,10 @@
     }
   }
   &__title {
-    font-size: 21vh;
+    font-size: 10vw;
     z-index: 2;
-    @include laptop {
-      font-size: 12vh;
-    }
     @include tablet {
-      font-size: 8vh;
+      font-size: 13vw;
     }
     & .word {
       display: inline-block;
