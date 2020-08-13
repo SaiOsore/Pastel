@@ -11,8 +11,9 @@
     width: 100%;
     font-size: 14vh;
     margin-bottom: 60px;
-    text-align: center;
+    text-align: left;
     @include tablet {
+      text-align: center;
       font-size: 6vh;
     }
   }

@@ -3,7 +3,7 @@ extends ../layouts/default
 block variables
   - const title = "Contact Page"
   - const description = "Contact Page"
-  - const theme = "bw"
+  - const theme = ""
 
 block content
   div(class="container contact")
@@ -15,6 +15,6 @@ block content
       div(class="contact__content")
         h1(class="title contact__title") Контакты
         a(class="contact__link" href="mailto:glambertfever@gmail.com") glambertfever@gmail.com
-        a(class="contact__link" href='tel:+380636174795') +380636174795
-        include ../socials/socials
+        // a(class="contact__link" href='tel:+380636174795') +380636174795
+        include ../blocks/socials/socials
     .FlyingImagesContainer

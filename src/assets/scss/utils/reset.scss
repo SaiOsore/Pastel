@@ -21,6 +21,9 @@ html {
 }
 a {
   text-decoration: none;
+  &:focus {
+    outline: 1px solid $primary;
+  }
 }
 img, fieldset, a img {
   border: none;

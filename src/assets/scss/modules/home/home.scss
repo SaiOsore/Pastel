@@ -49,6 +49,7 @@
     height: 100%;
     color: $primary;
     &:hover, &:focus {
+      outline: none;
       color: $secondary;
       transition: color .3s;
     }

@@ -124,6 +124,15 @@
     padding: 40px 0;
     display: flex;
     color: $black;
+    &:hover, &:focus {
+      outline: none;
+      .service-next__title, .service-next__text {
+        color: $primary;
+      }
+      .service-next__img {
+        transform: scale(.9);
+      }
+    }
   }
   &__img-container {
     width: 100%;
@@ -135,5 +144,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform .5s;
   }
 }

@@ -54,6 +54,13 @@
     margin-bottom: 14px;
     letter-spacing: .1em;
     transform: scaleY(1.6);
+    transition: color .3s;
+    &:focus {
+      outline: none;
+    }
+    &:hover, &:focus {
+      color: #b22b38;
+    }
     @include tabletl {
       font-size: $s;
     }

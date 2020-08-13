@@ -11,8 +11,19 @@
     border-radius: 50%;
     width: 55px;
     height: 55px;
+    transition: all .3s;
     &:last-child {
       margin-right: 0;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover, &:focus {
+      transform: scale(1.1);
+      border-color: $primary;
+      & svg {
+        fill: $primary;
+      }
     }
     @include tabletl {
       width: 40px;
@@ -22,6 +33,7 @@
       width: 25px;
       height: 25px;
       fill: $white;
+      transition: all .3s;
       @include tabletl {
         width: 15px;
         height: 15px;
