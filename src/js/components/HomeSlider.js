@@ -93,8 +93,14 @@ if(homeContainer) {
   /*LISTENERS*/
 
   /*WHEEL LISTENER*/
+
+  let mouseWheelDelta = (/Firefox/i.test(navigator.userAgent)) ? true : false;
+
   homeContainer.addEventListener('wheel', (e) => {
     let moved = e.wheelDelta;
+    if(mouseWheelDelta) {
+      moved = e.deltaY;
+    }
     HomeSectionAnimationRev();
     if(moved > 0) {
       timer(prevSlide, sliderTimer);

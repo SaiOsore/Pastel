@@ -121,7 +121,7 @@
     }
   }
   &__input {
-    visibility: hidden;
+    // visibility: hidden;
     opacity: 0;
     &:checked + .form-custom-radio__view:before {
       background-color: red;
