@@ -61,3 +61,26 @@ export const convertToSpans = (el, arr = []) => {
     }
   })
 }
+
+export const isVisible = (elem) => {
+
+  let coords = elem.getBoundingClientRect();
+  let windowHeight = document.documentElement.clientHeight;
+  let topVisible = coords.top > 0 && coords.top < windowHeight;
+  let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
+
+  return topVisible || bottomVisible;
+}
+
+export const showImg = () => {
+  for(let img of document.querySelectorAll('img')) {
+    let realSrc = img.dataset.src;
+    if (!realSrc) continue;
+
+    if(isVisible(img)) {
+      console.log('visible');
+      img.src = realSrc;
+      img.dataset.src = '';
+    }
+  }
+}

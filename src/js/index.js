@@ -11,3 +11,5 @@ import Styles from './components/Styles';
 import Packages from './components/Packages';
 import Text from './components/Text';
 import Forms from './components/Forms';
+import Gallery from './components/Gallery';
+import ImgsPreloader from './components/ImgsPreloader';

@@ -5,7 +5,7 @@ mixin servicesSection(services)
       section(class="section services__section")
           div(class="services__content-img")
             div(class="services__img-container")
-              img(class="services__img" src=service.src alt=service.alt)
+              img(class="services__img" src="" data-src=service.src alt=service.alt)
           div(class="services__content-text")
             div(class="services__descr")
               h2(class="text services__title") #{service.title}
@@ -28,7 +28,7 @@ mixin servicesSection(services)
               span() дополнительно
         div(class="services__content-img")
           div(class="services__img-container")
-            img(class="services__img" src=service.src alt=service.alt)
+            img(class="services__img" src="" data-src=service.src alt=service.alt)
 
 //- STYLES PAGE
 mixin stylesSection(styles)
@@ -41,22 +41,22 @@ mixin stylesSection(styles)
             p(class="text styles__text") #{style.descr}
             if(style.srcSpecial)
               div(class=`styles__special-img-container styles__special-img-container--${style.classSpecial}`)
-                img(class="styles__special-img" src=style.srcSpecial alt=style.altSpecial)
+                img(class="styles__special-img" src="" data-src=style.srcSpecial alt=style.altSpecial)
         div(class="styles__content-img")
           div(class="styles__img-container")
-            img(class="styles__img" src=style.src alt=style.alt)
+            img(class="styles__img" src="" data-src=style.src alt=style.alt)
     if(style.type === '2')
       section(class="section styles__section")
         div(class="styles__content-img")
           div(class="styles__img-container")
-            img(class="styles__img" src=style.src alt=style.alt)
+            img(class="styles__img" src="" data-src=style.src alt=style.alt)
         div(class="styles__content-text")
           h2(class="text styles__title") #{style.title}
           div(class="styles__descr")
             p(class="text styles__text") #{style.descr}
             if(style.srcSpecial)
               div(class=`styles__special-img-container styles__special-img-container--${style.classSpecial}`)
-                img(class="styles__special-img" src=style.srcSpecial alt=style.altSpecial)
+                img(class="styles__special-img" src="" data-src=style.srcSpecial alt=style.altSpecial)
 
 //- HEADER
 mixin header(color)
@@ -156,4 +156,5 @@ mixin gallery(arr)
     for item in arr
       div(class="gallery__block")
         div(class="gallery__img-container")
-          img(class="gallery__img" src=item.src alt=item.alt)
+          a(class="gallery__link" href=`#${item.id}`)
+            img(class="gallery__img" data-src=item.src src='' alt=item.alt id=item.id)

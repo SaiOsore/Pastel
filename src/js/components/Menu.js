@@ -1,5 +1,6 @@
-import { selectTabNav, deselectTabContent } from '../utils/tabs'
-import { toggleClassName } from '../utils/helpers'
+import { selectTabNav, deselectTabContent } from '../utils/tabs';
+import { toggleClassName } from '../utils/helpers';
+import { showImg } from '../utils/helpers';
 
 import waypoint from 'waypoints/lib/noframework.waypoints.min.js';
 import anime from 'animejs/lib/anime.es.js';
@@ -87,11 +88,14 @@ const tabNav = document.querySelectorAll('.menu-nav__item'),
 
 tabNav.forEach((item) => {
   item.addEventListener('mouseover', () => {
+    showImg();
     selectTabNav(item, tabContent);
   });
   item.addEventListener('click', () => {
+    showImg();
     selectTabNav(item, tabContent)
   });
+  // uncomment, if you want to close img on mouseout event
   // item.addEventListener('mouseout', () => {
   //   setTimeout(() => {
   //     deselectTabContent(tabContent);
