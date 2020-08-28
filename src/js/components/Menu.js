@@ -1,18 +1,19 @@
 import { selectTabNav, deselectTabContent } from '../utils/tabs';
-import { toggleClassName } from '../utils/helpers';
-import { showImg } from '../utils/helpers';
+import { toggleClassName, focusOnElement, showImg } from '../utils/helpers';
 
 import waypoint from 'waypoints/lib/noframework.waypoints.min.js';
 import anime from 'animejs/lib/anime.es.js';
 
 /*MENU BUTTON EVENTS*/
-const menuBtn = document.querySelector('.menu-btn');
-const menu = document.querySelector('.menu');
-const menuNavItems = document.querySelectorAll('.menu-nav__item');
-const menuSocials = document.querySelector('.menu__socials');
-const header = document.querySelector('.header');
-const footer = document.querySelector('.footer');
-const headerColor = header.getAttribute('data-theme');
+const menu = document.querySelector('.menu'),
+      menuBtn = document.querySelector('.menu-btn'),
+      menuNavItems = document.querySelectorAll('.menu-nav__item'),
+      menuSocials = document.querySelector('.menu__socials'),
+      header = document.querySelector('.header'),
+      footer = document.querySelector('.footer'),
+      headerColor = header.getAttribute('data-theme');
+
+focusOnElement(menu);
 
 menuBtn.addEventListener('click', function() {
   const menuOpenAnimation = anime({
@@ -39,6 +40,7 @@ menuBtn.addEventListener('click', function() {
           }
         }
       }
+      focusOnElement(menu);
     },
     complete: function() {
       let menuNavAnimation,

@@ -13,12 +13,6 @@ const isPreloaderLoaded = () => {
   preloader.classList.add('hidden');
 };
 
-window.onload = function() {
-  setTimeout(function() {
-    isPreloaderLoaded();
-  }, GLOBAL_DELAY);
-}
-
 const preloaderAnim = {
   targets: preloader,
   delay: GLOBAL_DELAY,
@@ -32,7 +26,7 @@ const preloaderAnim = {
     bodyFixed();
   },
   complete: function() {
-
+    isPreloaderLoaded();
   }
 };
 
@@ -41,9 +35,13 @@ const tlPreloader = anime.timeline({
   duration: 500
 });
 
-tlPreloader
-.add(preloaderAnim)
-tlPreloader.play();
+window.onload = function() {
+  setTimeout(function() {
+    tlPreloader
+      .add(preloaderAnim)
+      tlPreloader.play();
+  }, 0);
+}
 
 const preloaderCounter = document.querySelector('.preloader__end');
 

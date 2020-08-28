@@ -84,3 +84,11 @@ export const showImg = () => {
     }
   }
 }
+
+export const focusOnElement = (el, className = 'active') => {
+  if(el.classList.contains(className)) {
+    el.tabIndex = '0';
+  } else {
+    el.tabIndex = '-1';
+  }
+}
