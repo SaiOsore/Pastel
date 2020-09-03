@@ -1,0 +1,14 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Error Page"
+  - const description = "Error Page"
+  - const theme = ""
+
+block content
+  div(class="container error-page")
+    main(class="error-page__main")
+      h1(class="error-page__title") 404
+      p(class="error-page__text") Вернуться 
+        a(class="error-page__link" href="/") домой
+    .FlyingImagesContainer

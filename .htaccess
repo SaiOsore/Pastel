@@ -1,0 +1,3 @@
+AddDefaultCharset utf-8
+#GZIP
+ErrorDocument 404 /404.html
